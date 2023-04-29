@@ -1,5 +1,6 @@
 <script setup>
 import MainHeader from '../components/MainHeader.vue'
+import HelloScreen from '../components/homepage/HelloScreen.vue'
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import MainHeader from '../components/MainHeader.vue'
   </header>
 
   <main>
-    asd
+    <HelloScreen />
   </main>
 
   <footer>
