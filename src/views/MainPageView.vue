@@ -1,15 +1,15 @@
 <script setup>
 import MainHeader from '../components/MainHeader.vue'
-import HelloScreen from '../components/homepage/HelloScreen.vue'
+import FirstScreen from '../components/homepage/FirstScreen.vue'
 </script>
 
 <template>
-  <header class="absolute top-0 left-0 w-full">
+  <header class="absolute top-0 left-0 w-full z-50">
     <MainHeader />
   </header>
 
   <main>
-    <HelloScreen />
+    <FirstScreen />
   </main>
 
   <footer>
