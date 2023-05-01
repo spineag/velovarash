@@ -2,8 +2,8 @@
 </script>
 
 <template>
-    <div>
-        some header here
+    <div class="w-full absolute top-0 left-0" style="height:60px">
+        header
     </div>
 </template>
 

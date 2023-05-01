@@ -3,7 +3,9 @@
 
 <template>
     <div>
-        Hello screen
+        <h1 class="text-3xl font-bold underline">
+            Hello screen!
+        </h1>
     </div>
 </template>
 
