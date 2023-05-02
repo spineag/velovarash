@@ -22,7 +22,7 @@
         background-size: cover;
     }
     .bottom_line{
-        bottom: 100px;
+        bottom: 60px;
     }
     .bottom_line img{
         height:100px;
