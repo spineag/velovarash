@@ -3,9 +3,10 @@
 
 <template>
     <div class="w-full media_div bg-emerald-600 ">
-        <div class="velo_container relative">
-            <div class="absolute flex align-bottom bottom_line">
-asdasdasdasd
+        <div class="velo_container h-full">
+            <div class="absolute w-full flex items-end justify-between bottom_line">
+                <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/>
+                <span>м. Вараш</span>
             </div>
 
         </div>
@@ -22,5 +23,14 @@ asdasdasdasd
     }
     .bottom_line{
         bottom: 100px;
+    }
+    .bottom_line img{
+        height:100px;
+    }
+    .bottom_line span{
+        font-size: 36px;
+        font-weight: bold;
+        color:white;
+        line-height: 1;
     }
 </style>
