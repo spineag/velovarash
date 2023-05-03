@@ -1,6 +1,7 @@
 <script setup>
 import MainHeader from '../components/MainHeader.vue'
 import FirstScreen from '../components/homepage/FirstScreen.vue'
+import NewsScreen from '../components/homepage/NewsScreen.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import FirstScreen from '../components/homepage/FirstScreen.vue'
 
   <main>
     <FirstScreen />
+    <NewsScreen />
   </main>
 
   <footer>
