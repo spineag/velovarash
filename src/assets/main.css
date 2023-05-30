@@ -11,6 +11,17 @@
   width: 100%;
 }
 
+.velo_section_title{
+  font-size: 30px;
+  font-weight: bold;
+  padding: 100px 0 60px 0;
+  text-transform: uppercase;
+  position: relative;
+}
+.velo_empty_line{
+  margin:30px 0;
+}
+
 /* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

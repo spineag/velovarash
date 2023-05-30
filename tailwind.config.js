@@ -9,7 +9,6 @@ module.exports = {
     extend: {},
     colors: {
       transparent: 'transparent',
-      current: 'currentColor',
       gray: {
         900:'#111827',
         700:'#374151',
@@ -23,6 +22,7 @@ module.exports = {
       },
       white:'#ffffff',
       blue:'#0891B2',
+      light_cream:'#F8F7F4'
     },
   },
   plugins: [],

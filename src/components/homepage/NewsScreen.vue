@@ -5,7 +5,9 @@
 <template>
     <div class="w-full ">
         <div class="velo_container h-full">
-            <div class="screen_title text-gray-900 ">Новини</div>
+            <div class="velo_section_title">
+                <div class="text-gray-900 ">Стрічка</div>
+            </div>
             <div class="flex items-center justify-end news_icons">
                 <button title="Новини">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-5 h-5 stroke-gray-400 hover:stroke-gray-700">
@@ -41,10 +43,12 @@
 </template>
 
 <style scoped>
-.screen_title{
-    
-}
 .news_icons{
-    
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+.news_icons button{
+    margin-left: 10px;
 }
 </style>

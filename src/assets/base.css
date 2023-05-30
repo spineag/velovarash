@@ -79,7 +79,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: #F8F7F4;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: "DniproCity", 'Segoe UI', Roboto, Oxygen, Ubuntu,

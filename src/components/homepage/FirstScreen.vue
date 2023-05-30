@@ -28,7 +28,7 @@
         height:100px;
     }
     .bottom_line span{
-        font-size: 36px;
+        font-size: 30px;
         font-weight: bold;
         color:white;
         line-height: 1;
