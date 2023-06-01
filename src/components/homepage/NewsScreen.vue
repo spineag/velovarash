@@ -3,7 +3,7 @@ import Item from '../homepage/NewsScreenItem.vue'
 </script>
 
 <template>
-    <div class="w-full ">
+    <div class="w-full bg_lines">
         <div class="velo_container h-full">
             <div class="velo_section_title">
                 <div class="text-gray-900 ">Стрічка</div>
@@ -58,6 +58,20 @@ import Item from '../homepage/NewsScreenItem.vue'
 </template>
 
 <style scoped>
+.bg_lines:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url('../../assets/svg/lines-dark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
 .news_icons{
     position: absolute;
     bottom: 20px;
