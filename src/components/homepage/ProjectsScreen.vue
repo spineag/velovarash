@@ -5,8 +5,20 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
 <template>
     <div class="w-full">
         <div class="project_preview" style="background-image: url('src/assets/img/photo_bikers.jpg');">
-            <div class="velo_container">
-
+            <div class="velo_container h-full">
+                <div class="project_info">
+                    <div class="project_info_icon bg-emerald-600">
+                        <span>XC</span>
+                    </div>
+                    <div class="project_info_cont">
+                        <div class="text-gray-900">Меслибниця MOVE</div>
+                        <div class="project_info_stats">
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="velo_container velo_cont_inner">
@@ -36,15 +48,42 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
 <style scoped>
 .project_preview{
     width: 100%;
-    height: 600px;
+    height: 700px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: absolute;
     top: 288px;
 }
+.project_info{
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+    display: flex;
+}
+.project_info_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.project_info_cont{
+    width:340px;
+    background-color: white;
+    padding: 10px;
+}
+.project_info_stats{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
 .velo_cont_inner{
-    height: calc(600px + 288px);
+    height: calc(700px + 288px);
 }
 .projects_items_container{
     max-width: 920px;
