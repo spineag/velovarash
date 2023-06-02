@@ -65,11 +65,11 @@ import NewsItem from '../homepage/NewsScreenItem.vue'
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 150%;
     opacity: 0.1;
     background-image: url('../../assets/svg/lines-dark.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     }
 .news_icons{
