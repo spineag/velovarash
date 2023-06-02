@@ -5,7 +5,7 @@
     <div class="w-full flex items-center header_container">
         <nav class="velo_container flex justify-between items-center">
             <RouterLink to="/" class="mr-20"> <img class="logo_header" src = "../../src/assets/svg/logo.svg" alt=""/> </RouterLink>
-            <RouterLink to="/news">Стрічка</RouterLink>
+            <RouterLink to="/news">Новини</RouterLink>
             <RouterLink to="/projects">Проекти</RouterLink>
             <RouterLink to="/routes">Маршрути</RouterLink>
             <RouterLink to="/about">Спільнота</RouterLink>
