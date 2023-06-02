@@ -1,5 +1,5 @@
 <script setup>
-import Item from '../homepage/NewsScreenItem.vue'
+import NewsItem from '../homepage/NewsScreenItem.vue'
 </script>
 
 <template>
@@ -33,10 +33,10 @@ import Item from '../homepage/NewsScreenItem.vue'
             </div>
             
             <div class="news_items_container">
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                <NewsItem />
+                <NewsItem />
+                <NewsItem />
+                <NewsItem />
             </div>
 
             <div class="news_nav_container">
