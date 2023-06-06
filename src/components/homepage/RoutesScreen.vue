@@ -1,13 +1,11 @@
 <script setup>
-import ProjectItem from '../homepage/ProjectsScreenItem.vue'
+// import MapItem from './RoutesScreenLeaflet.vue'
 </script>
 
 <template>
-    <div class="w-full">
-        <div class="w-full velo_map">
-
-        </div>
-        <div class="velo_container h-full">
+    <div class="w-full relative">
+        <!-- <MapItem /> -->
+        <div class="velo_container h-full map_filters">
             <div class="flex justify-between">
                 <div class="velo_section_title inline-block">
                     <div class="text-gray-900">Маршрути</div>
@@ -25,11 +23,14 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
 </template>
 
 <style scoped>
-.velo_map{
-    position:absolute;
-    height: 800px;
+.map_filters{
+    z-index: 900;
 }
 .filters_cont{
     padding-top:100px;
 }
 </style>
+
+
+
+
