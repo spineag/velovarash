@@ -3,6 +3,7 @@ import MainHeader from '../components/MainHeader.vue'
 import FirstScreen from '../components/homepage/FirstScreen.vue'
 import NewsScreen from '../components/homepage/NewsScreen.vue'
 import ProjectsScreen from '../components/homepage/ProjectsScreen.vue'
+import RoutesScreen from '../components/homepage/RoutesScreen.vue'
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import ProjectsScreen from '../components/homepage/ProjectsScreen.vue'
     <FirstScreen />
     <NewsScreen />
     <ProjectsScreen />
+    <RoutesScreen />
   </main>
 
   <footer>
