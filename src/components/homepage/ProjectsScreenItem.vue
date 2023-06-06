@@ -4,7 +4,7 @@
 
 
 <template>
-    <div>
+    <div class="cursor-pointer">
         <div class="w-full img_div" style="background-image: url('src/assets/img/photo_bikers.jpg');"></div>
         <div class="w-full text-gray-900 txt_div">
             <span>Меслибниця MOVE</span>
@@ -18,7 +18,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    cursor: pointer;
 }
 .txt_div{
     background-color: white;

@@ -6,7 +6,7 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
     <div class="w-full">
         <div class="project_preview" style="background-image: url('src/assets/img/photo_bikers.jpg');">
             <div class="velo_container h-full">
-                <div class="project_info">
+                <div class="project_info cursor-pointer">
                     <div class="project_info_label bg-emerald-600">
                         <span>XC</span>
                     </div>
@@ -52,11 +52,11 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
                 </div>
             </div>
         </div>
-        <div class="velo_container velo_cont_inner">
+        <div class="velo_container velo_cont_inner pointer-events-none">
             <div class="velo_section_title">
                 <div class="text-gray-900 text-center">Проекти</div>
             </div>
-            <div class="projects_items_container">
+            <div class="projects_items_container pointer-events-auto">
                 <ProjectItem />
                 <ProjectItem />
                 <ProjectItem />
@@ -91,7 +91,6 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
     right: 0;
     bottom: 100px;
     display: flex;
-    cursor: pointer;
 }
 .project_info_label{
     display: flex;
