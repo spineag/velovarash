@@ -1,10 +1,10 @@
 <script setup>
-// import MapItem from './RoutesScreenLeaflet.vue'
+import MapItem from './RoutesScreenLeaflet.vue'
 </script>
 
 <template>
     <div class="w-full relative">
-        <!-- <MapItem /> -->
+        <MapItem />
         <div class="velo_container h-full map_filters">
             <div class="flex justify-between">
                 <div class="velo_section_title inline-block">
