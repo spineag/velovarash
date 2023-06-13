@@ -12,6 +12,9 @@
           layer-type="base"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         ></l-tile-layer>
+
+        <!-- <div class="overlay_map_black"></div> -->
+        
         <!-- <l-control-layers /> -->
         <!-- <l-marker :lat-lng="[0, 0]" draggable @moveend="log('moveend')">
           <l-tooltip>
@@ -139,5 +142,15 @@
     margin:0;
     position: absolute;
     top:0;
+  }
+  /* .overlay_map_black{
+    background-color: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 800px;
+    z-index: 900;
+  } */
+  .leaflet-tile-pane{
+    filter: grayscale(1);
   }
   </style>
