@@ -109,28 +109,28 @@
     data() {
       return {
         zoom: 12,
-        iconWidth: 25,
-        iconHeight: 40,
+        // iconWidth: 25,
+        // iconHeight: 40,
       };
     },
     computed: {
-      iconUrl() {
-        return `https://placekitten.com/${this.iconWidth}/${this.iconHeight}`;
-      },
-      iconSize() {
-        return [this.iconWidth, this.iconHeight];
-      },
+      // iconUrl() {
+      //   return `https://placekitten.com/${this.iconWidth}/${this.iconHeight}`;
+      // },
+      // iconSize() {
+      //   return [this.iconWidth, this.iconHeight];
+      // },
     },
     methods: {
-      log(a) {
-        console.log(a);
-      },
-      changeIcon() {
-        this.iconWidth += 2;
-        if (this.iconWidth > this.iconHeight) {
-          this.iconWidth = Math.floor(this.iconHeight / 2);
-        }
-      },
+      // log(a) {
+      //   console.log(a);
+      // },
+      // changeIcon() {
+      //   this.iconWidth += 2;
+      //   if (this.iconWidth > this.iconHeight) {
+      //     this.iconWidth = Math.floor(this.iconHeight / 2);
+      //   }
+      // },
     },
   };
   </script>
