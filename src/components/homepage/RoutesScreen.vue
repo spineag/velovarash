@@ -78,7 +78,7 @@ import MapItem from './RoutesScreenLeaflet.vue'
 .select_route_land > label{
     display: block;
     color: #cbe7de;
-    font-size: 13px;
+    font-size: 14px;
 }
 .select_route_land > select{
     background-color: #059669;
@@ -86,10 +86,11 @@ import MapItem from './RoutesScreenLeaflet.vue'
     border:none;
     font-size: 18px;
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     width: 100%;
     margin-top: 2px;
     cursor: pointer;
+    padding-left:3px;
 }
 .select_route_land > select:focus, .select_route_land > select:active{
     outline: none;
