@@ -5,7 +5,7 @@
         :minZoom="8"
         v-model="zoom"
         v-model:zoom="zoom"
-        :center="[51.3489, 25.8526]"
+        :center="[47.41322, -1.219482]" 
         @move="log('move')"
       >
         <l-tile-layer
@@ -13,9 +13,9 @@
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         ></l-tile-layer>
 
-        <!-- <div class="overlay_map_black"></div> -->
+        <l-geo-json :geojson="geojson" :options-style="geoStyler"></l-geo-json>
         
-        <!-- <l-control-layers /> -->
+        <!-- <l-control-layers /> -->         <!-- [51.3489, 25.8526] -->
         <!-- <l-marker :lat-lng="[0, 0]" draggable @moveend="log('moveend')">
           <l-tooltip>
             lol
@@ -81,45 +81,44 @@
   <script>
   import {
     LMap,
-    LIcon,
+    // LIcon,
     LTileLayer,
-    LMarker,
+    // LMarker,
     LControlLayers,
-    LTooltip,
-    LPopup,
-    LPolyline,
-    LPolygon,
-    LRectangle,
+    // LTooltip,
+    // LPopup,
+    // LPolyline,
+    // LPolygon,
+    // LRectangle,
+    LGeoJson
   } from "@vue-leaflet/vue-leaflet";
   import "leaflet/dist/leaflet.css";
   
   export default {
     components: {
       LMap,
-      LIcon,
+      // LIcon,
       LTileLayer,
-      LMarker,
+      // LMarker,
       LControlLayers,
-      LTooltip,
-      LPopup,
-      LPolyline,
-      LPolygon,
-      LRectangle,
+      // LTooltip,
+      // LPopup,
+      // LPolyline,
+      // LPolygon,
+      // LRectangle,
+      LGeoJson,
     },
     data() {
       return {
         zoom: 12,
-        // iconWidth: 25,
-        // iconHeight: 40,
+        geojson: "../../assets/geojson/test.geojson", //undefined,
+        geoStyler: (feature) => ({
+          opacity: feature.properties.code / 100000,
+        }),
       };
     },
     computed: {
-      // iconUrl() {
-      //   return `https://placekitten.com/${this.iconWidth}/${this.iconHeight}`;
-      // },
-      // iconSize() {
-      //   return [this.iconWidth, this.iconHeight];
-      // },
+
     },
     methods: {
       // log(a) {
@@ -132,6 +131,14 @@
       //   }
       // },
     },
+    // async created() {
+    //   const response = await fetch(
+    //     // "../../assets/geojson/whitelake.geojson"
+    //     "../../assets/geojson/test.geojson"
+    //   );
+    //   this.geojson = await response.json();
+    //   console.log(this.geojson);
+    // },
   };
   </script>
 
@@ -143,13 +150,6 @@
     position: absolute;
     top:0;
   }
-  /* .overlay_map_black{
-    background-color: black;
-    opacity: 0.2;
-    width: 100%;
-    height: 800px;
-    z-index: 900;
-  } */
   </style>
 
   <style>
