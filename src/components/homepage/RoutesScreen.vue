@@ -260,11 +260,13 @@ import MapItem from './RoutesScreenLeaflet.vue'
 <style scoped>
 .map_overcont{
     z-index: 900;
+    pointer-events: none;
 }
 .filters_cont{
     margin-top:100px;
     display: flex;
     height:100%;
+    pointer-events: all;
 }
 .select_route_land{
     width: 160px;
@@ -299,6 +301,7 @@ import MapItem from './RoutesScreenLeaflet.vue'
     width:240px;
     max-height: 480px;
     overflow-y: auto;
+    pointer-events: all;
 }
 .route_item{
     width: 100%;

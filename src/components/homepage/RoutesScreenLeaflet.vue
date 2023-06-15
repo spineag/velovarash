@@ -150,7 +150,10 @@
     height: 800px;
     z-index: 900;
   } */
-  .leaflet-tile-pane{
-    filter: grayscale(1);
+  </style>
+
+  <style>
+  .leaflet-tile-container{
+    filter: grayscale(1)  brightness(107%);
   }
   </style>
