@@ -15,6 +15,10 @@
 
         <l-geo-json :geojson="geojson" :options-style="geoStyler"></l-geo-json>
         
+        <!-- <l-circle :lat-lng="[51.3426, 25.9672]" :radius="500" color="green" /> -->
+        <l-circle-marker :lat-lng="[51.34317, 25.96688]" :radius="10" color="#059669" fillOpacity="1" fillColor="#059669" />
+        <l-circle-marker :lat-lng="[51.49247, 25.76043]" :radius="10" color="orange" fillOpacity="1" fillColor="orange" />
+
         <!-- <l-control-layers /> -->    
         <!-- <l-marker :lat-lng="[0, 0]" draggable @moveend="log('moveend')">
           <l-tooltip>
@@ -90,7 +94,9 @@
     // LPolyline,
     // LPolygon,
     // LRectangle,
-    LGeoJson
+    LGeoJson,
+    // LCircle,
+    LCircleMarker,
   } from "@vue-leaflet/vue-leaflet";
   import "leaflet/dist/leaflet.css";
   
@@ -107,6 +113,8 @@
       // LPolygon,
       // LRectangle,
       LGeoJson,
+      // LCircle,
+      LCircleMarker,
     },
     data() {
       return {
