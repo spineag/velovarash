@@ -111,7 +111,7 @@
     data() {
       return {
         zoom: 12,
-        geojson: "../../assets/geojson/test.geojson", //undefined,
+        geojson: undefined,
         geoStyler: (feature) => ({
           opacity: feature.properties.code / 100000,
         }),
