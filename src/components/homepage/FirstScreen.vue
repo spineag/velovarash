@@ -6,7 +6,7 @@
         <div class="velo_container h-full">
             <div class="absolute w-full flex items-end justify-between bottom_line">
                 <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/>
-                <span>м. Вараш</span>
+                <!-- <span>м. Вараш</span> -->
             </div>
 
         </div>
