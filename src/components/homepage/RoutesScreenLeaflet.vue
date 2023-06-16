@@ -5,7 +5,7 @@
         :minZoom="8"
         v-model="zoom"
         v-model:zoom="zoom"
-        :center="[47.41322, -1.219482]" 
+        :center="[51.3939, 25.8607]" 
         @move="log('move')"
       >
         <l-tile-layer
@@ -15,7 +15,7 @@
 
         <l-geo-json :geojson="geojson" :options-style="geoStyler"></l-geo-json>
         
-        <!-- <l-control-layers /> -->         <!-- [51.3489, 25.8526] -->
+        <!-- <l-control-layers /> -->    
         <!-- <l-marker :lat-lng="[0, 0]" draggable @moveend="log('moveend')">
           <l-tooltip>
             lol
@@ -110,10 +110,12 @@
     },
     data() {
       return {
-        zoom: 12,
+        zoom: 11,
         geojson: undefined,
         geoStyler: (feature) => ({
-          opacity: feature.properties.code / 100000,
+          // https://leafletjs.com/reference.html#path-option
+          color: '#0891B2',
+          weight: 10
         }),
       };
     },
@@ -131,14 +133,10 @@
       //   }
       // },
     },
-    // async created() {
-    //   const response = await fetch(
-    //     // "../../assets/geojson/whitelake.geojson"
-    //     "../../assets/geojson/test.geojson"
-    //   );
-    //   this.geojson = await response.json();
-    //   console.log(this.geojson);
-    // },
+    async created() {
+      const response = await fetch("https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/geojson/50velowatt.geojson");
+      this.geojson = await response.json();
+    },
   };
   </script>
 
