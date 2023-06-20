@@ -14,19 +14,20 @@ import MapItem from './RoutesScreenLeaflet.vue'
                     <div class="select_route_land bg-emerald-600">
                         <label for="route_land">Покриття</label>
                         <select id="route_land">
-                            <option value="1" selected>Різне</option>
-                            <option value="2">Асфальт</option>
-                            <option value="3">Дорога</option>
-                            <option value="4">Бездоріжжя</option>
-                            <option value="5">Гравій</option>
-                            <option value="6">Грунт</option>
+                            <option value="-1" selected>Будь-яке</option>
+                            <option value="1">Асфальт</option>
+                            <option value="2">Дорога</option>
+                            <option value="3">Бездоріжжя</option>
+                            <option value="4">Гравій</option>
+                            <option value="5">Грунт</option>
                         </select>
                     </div>
                     <div class="select_route_land bg-emerald-600">
                         <label for="route_land">Складність</label>
                         <select id="route_land">
+                            <option value="-1" selected>Будь-яка</option>
                             <option value="1">Низька</option>
-                            <option value="2" selected>Середня</option>
+                            <option value="2">Середня</option>
                             <option value="3">Важка</option>
                             <option value="4">Дуже важка</option>
                         </select>
@@ -34,8 +35,9 @@ import MapItem from './RoutesScreenLeaflet.vue'
                     <div class="select_route_land bg-emerald-600">
                         <label for="route_land">Дистанція</label>
                         <select id="route_land">
+                            <option value="-1"  selected>Будь-яка</option>
                             <option value="1">Коротка</option>
-                            <option value="2" selected>Середня</option>
+                            <option value="2">Середня</option>
                             <option value="3">Довга</option>
                             <option value="4">Ультра</option>
                         </select>
@@ -43,9 +45,10 @@ import MapItem from './RoutesScreenLeaflet.vue'
                     <div class="select_route_land bg-emerald-600">
                         <label for="route_land">Категорія</label>
                         <select id="route_land">
+                            <option value="-1" selected>Будь-яка</option>
                             <option value="1">Прогулянка</option>
                             <option value="2">Туризм</option>
-                            <option value="3" selected>Тренування</option>
+                            <option value="3">Тренування</option>
                             <option value="4">Спорт</option>
                             
                         </select>
