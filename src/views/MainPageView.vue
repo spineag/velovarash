@@ -5,6 +5,7 @@ import NewsScreen from '../components/homepage/NewsScreen.vue'
 import ProjectsScreen from '../components/homepage/ProjectsScreen.vue'
 import RoutesScreen from '../components/homepage/RoutesScreen.vue'
 import AboutScreen from '../components/homepage/AboutScreen.vue'
+import HelpScreen from '../components/homepage/HelpScreen.vue'
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import AboutScreen from '../components/homepage/AboutScreen.vue'
     <ProjectsScreen />
     <RoutesScreen />
     <AboutScreen />
+    <HelpScreen />
   </main>
 
   <footer>
