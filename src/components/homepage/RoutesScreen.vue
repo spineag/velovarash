@@ -264,7 +264,7 @@ import MapItem from './RoutesScreenLeaflet.vue'
 .map_overcont{
     z-index: 900;
     pointer-events: none;
-    height: 880px;
+    height: 800px;
 }
 .filters_cont{
     margin-top:100px;

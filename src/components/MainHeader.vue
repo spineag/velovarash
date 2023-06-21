@@ -8,7 +8,7 @@
             <RouterLink to="/news">Новини</RouterLink>
             <RouterLink to="/projects">Проекти</RouterLink>
             <RouterLink to="/routes">Маршрути</RouterLink>
-            <RouterLink to="/about">Спільнота</RouterLink>
+            <RouterLink to="/about">Веловараш</RouterLink>
             <RouterLink to="/help">Допомога</RouterLink>
         </nav>
     </div>

@@ -7,9 +7,9 @@
         <div class="about_cont bg-emerald-600">
             <div class="about_texts">
                 <div class="velo_section_title inline-block">
-                    <div class="text-white">Спільнота</div>
+                    <div class="text-white">Веловараш</div>
                 </div>
-                <div><span class="about_subtitle">Веловараш</span> - неформальна спільнота велосипедистів міста Вараш.</div>
+                <div>Неформальна спільнота велосипедистів міста Вараш.</div>
                 <br>
                 <div>Основні завдання:
                     <ul>
@@ -21,6 +21,13 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="about_btn_cont">
+            <div class="velo_container about_showall cursor-pointer">
+                    <span>Детальніше</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6 velo_stroke_gray inline-block ml-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /> </svg>
+                </div>
         </div>
     </div>
 </template>
@@ -44,14 +51,31 @@
     height:100%;
 }
 .about_texts{
-    max-width: 512px;
+    max-width: 640px;
     width:100%;
     padding:0 0 0 60px;
     font-size: 16px;
     color: white;
 }
-.about_subtitle{
-    font-weight: bold;
-    font-size: 24px;
+.about_texts ul{
+    list-style-type: square;
+    list-style-position: outside;
+}
+.about_texts li{
+    margin-left: 15px;
+}
+.about_btn_cont{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+.about_showall{
+    color: white;
+    stroke: white;
+    display: flex;
+    justify-content: end;
+}
+.about_showall svg{
+    stroke: white;
 }
 </style>
