@@ -35,6 +35,9 @@ import HelpItem from '../homepage/HelpScreenItem.vue'
 </template>
 
 <style scoped>
+.bg_lines{
+    height: 650px;
+}
 .bg_lines:before{
     content: ' ';
     display: block;
