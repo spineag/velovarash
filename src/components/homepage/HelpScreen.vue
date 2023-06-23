@@ -36,7 +36,7 @@ import HelpItem from '../homepage/HelpScreenItem.vue'
 
 <style scoped>
 .bg_lines{
-    height: 650px;
+    height: 520px;
 }
 .bg_lines:before{
     content: ' ';
@@ -45,7 +45,7 @@ import HelpItem from '../homepage/HelpScreenItem.vue'
     left: 0;
     top: 0;
     width: 100%;
-    height: 650px;
+    height: 520px;
     opacity: 0.1;
     background-image: url('../../assets/svg/lines-dark.svg');
     background-repeat: no-repeat;

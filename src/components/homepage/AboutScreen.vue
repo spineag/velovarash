@@ -66,7 +66,7 @@
 }
 .about_btn_cont{
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
     width: 100%;
 }
 .about_showall{

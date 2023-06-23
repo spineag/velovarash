@@ -15,14 +15,14 @@
 
 <style scoped>
     .media_div{
-        height:900px;
+        height:calc(100vh - 80px);
         background-image: url("../../assets/img/photo_bikers.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
     .bottom_line{
-        bottom: 60px;
+        bottom: 80px;
     }
     .bottom_line img{
         height:100px;

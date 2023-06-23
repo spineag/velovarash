@@ -14,7 +14,7 @@
 
 <style scoped>
 .footer_cont{
-    height: 350px;
+    height: 300px;
 }
 .footer_cont img{
     width:420px;

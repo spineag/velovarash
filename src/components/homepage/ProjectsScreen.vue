@@ -79,17 +79,17 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
 <style scoped>
 .project_preview{
     width: 100%;
-    height: 700px;
+    height: 650px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: absolute;
-    top: 288px;
+    top: 248px;
 }
 .project_info{
     position: absolute;
     right: 0;
-    bottom: 100px;
+    bottom: 80px;
     display: flex;
 }
 .project_info_label{
@@ -140,7 +140,7 @@ import ProjectItem from '../homepage/ProjectsScreenItem.vue'
     right:20px;
 }
 .velo_cont_inner{
-    height: calc(700px + 288px);
+    height: calc(650px + 248px);
 }
 .projects_items_container{
     max-width: 920px;

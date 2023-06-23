@@ -264,10 +264,10 @@ import MapItem from './RoutesScreenLeaflet.vue'
 .map_overcont{
     z-index: 900;
     pointer-events: none;
-    height: 800px;
+    height: 750px;
 }
 .filters_cont{
-    margin-top:100px;
+    margin-top:80px;
     display: flex;
     height:100%;
     pointer-events: all;
@@ -303,7 +303,7 @@ import MapItem from './RoutesScreenLeaflet.vue'
 }
 .route_cont{
     width:240px;
-    max-height: 480px;
+    max-height: 500px;
     overflow-y: auto;
     pointer-events: all;
 }

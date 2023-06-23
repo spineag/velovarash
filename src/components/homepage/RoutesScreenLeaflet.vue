@@ -152,7 +152,7 @@
 
   <style scoped>
   .velo_bg_map{
-    height:800px;
+    height:750px;
     padding: 0;
     margin:0;
     position: absolute;
