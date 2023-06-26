@@ -82,6 +82,9 @@
       </l-map>
       <!-- <button @click="changeIcon">New kitten icon</button> -->
     </div>
+    <div class="w-full velo_bg_map inner_shadow">
+
+    </div>
   </template>
 
   <script>
@@ -158,6 +161,11 @@
     position: absolute;
     top:0;
   }
+.inner_shadow{
+    z-index: 999;
+    box-shadow: inset 0px 3px 3px rgb(0,0,0,0.25), inset 0px -3px 3px rgb(0,0,0,0.25);
+    pointer-events: none;
+}
   </style>
 
   <style>

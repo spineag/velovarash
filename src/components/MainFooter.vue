@@ -5,7 +5,7 @@
     <div class="w-full bg-gray-700">
         <div class="velo_container footer_cont">
             <div class="velo_section_title text-center">
-                <img src = "../../../src/assets/svg/logo_text.svg" alt=""/>
+                <img src = "../../src/assets/svg/logo_text.svg" alt=""/>
             </div>
             <div class="text-white text-center"><span>м. Вараш, 2023</span></div>
         </div>
