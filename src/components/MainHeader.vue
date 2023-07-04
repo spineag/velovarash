@@ -4,7 +4,8 @@
 <template>
     <div class="w-full flex items-center header_container">
         <nav class="velo_container flex justify-between items-center">
-            <RouterLink to="/" class="mr-20"> <img class="logo_header" src = "../../src/assets/svg/logo.svg" alt=""/> </RouterLink>
+            <RouterLink to="/" class="mr-20"> <img class="logo_header" src = "../../src/assets/svg/logo.svg" alt=""/> </RouterLink> 
+             <!-- https://codepen.io/ephs23/pen/NeQZGx animate logo! -->
             <RouterLink to="/news"><span>Новини</span></RouterLink>
             <RouterLink to="/projects"><span>Проекти</span></RouterLink>
             <RouterLink to="/routes"><span>Маршрути</span></RouterLink>
@@ -37,16 +38,10 @@ nav>*{
     opacity: 1;
     line-height: 1;
 }
-nav:hover span{
-    opacity: .75;
-}
-nav span:hover{
-    opacity: 1;
-}
-nav>*>{
-    position: relative;
-}
-nav>*:before {
+nav:hover span {  opacity: .75; }
+nav span:hover {  opacity: 1; }
+nav>*> { position: relative; }
+nav span:before {
     position: absolute; 
     content: "";
     display: block;
@@ -60,10 +55,7 @@ nav>*:before {
     transform: scaleX(0);
     transition: .3s ease-out;
 }
-/* nav>*:hover {
-    color: green;
-} */
-nav>*:hover:before {
+nav span:hover:before {
     transform-origin: right;
     transform: scaleX(1);
 } 
