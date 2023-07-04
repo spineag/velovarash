@@ -24,10 +24,10 @@
     width:60px;
     height:60px;
 }
-nav{
+/* nav{
     pointer-events: none;
     transition: all .3s ease;
-}
+} */
 nav>*{
     pointer-events: all;
     text-transform: uppercase;
@@ -38,8 +38,8 @@ nav>*{
     opacity: 1;
     line-height: 1;
 }
-nav:hover span {  opacity: .75; }
-nav span:hover {  opacity: 1; }
+/* nav:hover span {  opacity: .75; }
+nav span:hover {  opacity: 1; } */
 nav>*> { position: relative; }
 nav span:before {
     position: absolute; 
