@@ -4,8 +4,13 @@
 <template>
     <div class="w-full flex items-center header_container">
         <nav class="velo_container flex justify-between items-center">
-            <RouterLink to="/" class="mr-20"> <img class="logo_header" src = "../../src/assets/svg/logo.svg" alt=""/> </RouterLink> 
-             <!-- https://codepen.io/ephs23/pen/NeQZGx animate logo! -->
+            <!-- <RouterLink to="/" class="mr-20"> <img class="logo_header" src = "../../src/assets/svg/logo.svg" alt=""/> </RouterLink>  -->
+            <RouterLink to="/" class="mr-20">
+                <div class="logo_header_cont">
+                    <img class="logo_header" src = "../../src/assets/svg/logo_inner.svg" alt=""/>
+                </div>
+            </RouterLink>
+
             <RouterLink to="/news"><span>Новини</span></RouterLink>
             <RouterLink to="/projects"><span>Проекти</span></RouterLink>
             <RouterLink to="/routes"><span>Маршрути</span></RouterLink>
@@ -20,10 +25,22 @@
     height: 100px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0));
 }
+.logo_header_cont{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .logo_header{
     width:60px;
     height:60px;
+    transition: .7s;
 }
+.logo_header_cont:hover .logo_header{ transform: rotateY(360deg); }
 /* nav{
     pointer-events: none;
     transition: all .3s ease;
