@@ -1,4 +1,5 @@
 <script setup>
+import TextArrow from '../parts/TextArrow.vue';
 </script>
 
 <template>
@@ -23,11 +24,9 @@
             </div>
         </div>
         <div class="about_btn_cont">
-            <div class="velo_container about_showall cursor-pointer">
-                    <span>Детальніше</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6 velo_stroke_gray inline-block ml-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /> </svg>
-                </div>
+            <div class="velo_container flex justify-end">
+                <TextArrow class="white_color" title_text="Детальніше"></TextArrow>
+            </div>
         </div>
     </div>
 </template>
@@ -69,13 +68,5 @@
     bottom: 80px;
     width: 100%;
 }
-.about_showall{
-    color: white;
-    stroke: white;
-    display: flex;
-    justify-content: end;
-}
-.about_showall svg{
-    stroke: white;
-}
+
 </style>

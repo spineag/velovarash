@@ -38,13 +38,9 @@
 .logo_header{
     width:60px;
     height:60px;
-    transition: .7s;
+    transition: .3s;
 }
-.logo_header_cont:hover .logo_header{ transform: rotateY(360deg); }
-/* nav{
-    pointer-events: none;
-    transition: all .3s ease;
-} */
+.logo_header_cont:hover .logo_header{ transform: rotateY(180deg); }
 nav>*{
     pointer-events: all;
     text-transform: uppercase;
@@ -55,8 +51,7 @@ nav>*{
     opacity: 1;
     line-height: 1;
 }
-/* nav:hover span {  opacity: .75; }
-nav span:hover {  opacity: 1; } */
+
 nav>*> { position: relative; }
 nav span:before {
     position: absolute; 
@@ -76,6 +71,5 @@ nav span:hover:before {
     transform-origin: right;
     transform: scaleX(1);
 } 
-
 
 </style>

@@ -46,6 +46,11 @@ export default {
         font-size: 16px;
         line-height: 16px;
         transition: transform 0.4s ease;
+        white-space: nowrap;
+    }
+    .vertical_pos{
+        height: 40px;
+        flex-direction: column;
     }
     .link-title1 { transform-origin: right center; }
     .link-title2 {
@@ -55,4 +60,8 @@ export default {
     .link:hover .link-container { transform: translateY(-16px); }
     .link:hover .link-title1 { transform: rotate(20deg); }
     .link:hover .link-title2 { transform: rotate(0); }
+    .white_color{
+        color: white;
+        fill: white;
+    }
 </style>

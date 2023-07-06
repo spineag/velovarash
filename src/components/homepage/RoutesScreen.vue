@@ -1,5 +1,6 @@
 <script setup>
-import MapItem from './RoutesScreenLeaflet.vue'
+import MapItem from './RoutesScreenLeaflet.vue';
+import TextArrow from '../parts/TextArrow.vue';
 </script>
 
 <template>
@@ -52,6 +53,9 @@ import MapItem from './RoutesScreenLeaflet.vue'
                             <option value="4">Спорт</option>
                             
                         </select>
+                    </div>
+                    <div class="select_route_land select_route_land_small bg-emerald-600 h-100 flex items-center justify-center">
+                        <TextArrow class="vertical_pos white_color" title_text="Всі маршрути"></TextArrow>
                     </div>
                 </div>
             </div>
@@ -278,8 +282,10 @@ import MapItem from './RoutesScreenLeaflet.vue'
     padding: 5px 10px;
     border-right: 1px solid white;
 }
-.select_route_land:last-child{
+.select_route_land_small{
     border: none;
+    width:120px;
+    font-weight: normal;
 }
 .select_route_land > label{
     display: block;

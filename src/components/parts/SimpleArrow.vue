@@ -28,6 +28,7 @@
     transition: transform 0.4s ease;
     width:16px;
     height:16px;
+    fill:inherit;
     }
 .icon2 { transform: translate(-32px); }
 .contonhover .icon1 { transform: translate(32px); }
