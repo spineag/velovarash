@@ -32,6 +32,7 @@ export default {
         align-items: center;
         text-decoration: none;
         display: flex;
+        cursor: pointer;
     }
     .mask {
         position: relative;

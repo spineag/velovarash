@@ -21,6 +21,7 @@
     align-items: center;
     margin-left: 8px;
     overflow: hidden;
+    cursor: pointer;
 }
 .icon {
     display: block;
@@ -35,5 +36,9 @@
 .contonhover .icon2 { transform: translate(0px); }
 .link-icon:hover .icon1 { transform: translate(32px); }
 .link-icon:hover .icon2 { transform: translate(0px); }
-
+.rotate180{
+    margin-left: 0;
+    margin-right: 8px;
+    transform: rotate(180deg);
+}
 </style>

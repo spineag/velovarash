@@ -1,6 +1,7 @@
 <script setup>
 import NewsItem from '../homepage/NewsScreenItem.vue';
 import TextArrow from '../parts/TextArrow.vue';
+import SimpleArrow from '../parts/SimpleArrow.vue';
 </script>
 
 <script>
@@ -58,11 +59,9 @@ export default {
             </div>
 
             <div class="news_nav_container">
-                <div class="news_nav_arrows">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6  velo_stroke_gray inline-block cursor-pointer">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" /> </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6 velo_stroke_gray inline-block cursor-pointer ml-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /> </svg>
+                <div class="flex">
+                    <SimpleArrow class="rotate180"/>
+                    <SimpleArrow />
                 </div>
                 <TextArrow title_text="Всі новини"></TextArrow>
             </div>

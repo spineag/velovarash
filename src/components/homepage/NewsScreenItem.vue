@@ -1,9 +1,21 @@
-<script setup>
+<script>
+import SimpleArrow from '../parts/SimpleArrow.vue';
 
+export default {
+  components: {
+    SimpleArrow
+  },
+  props: [],
+  data() {
+    return {
+        isHover: false
+    }
+  }
+}
 </script>
 
 <template>
-    <div class="news_item">
+    <div class="news_item"  @mouseenter="isHover = true"    @mouseleave="isHover = false">
        <div class="news_item_img" style="background-image: url('src/assets/img/photo_bikers.jpg');"> </div>
         <div class="news_item_texts">
             <div class="news_item_type bg-emerald-600">
@@ -14,8 +26,7 @@
             <div class="news_item_date text-gray-400">12.05.23</div>
             <div class="news_item_title">Фрукти - важлива частина здорового харчування</div>
             <div class="news_item_link">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6 velo_stroke_gray">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /> </svg>
+                <SimpleArrow :class="{ contonhover: isHover }" />
             </div>
         </div>
         
