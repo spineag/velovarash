@@ -289,20 +289,31 @@ import TextArrow from '../parts/TextArrow.vue';
 }
 .select_route_land > label{
     display: block;
-    color: #cbe7de;
+    color: white;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+.select_route_land:hover > label{
     font-size: 14px;
+    font-weight: normal;
+    color: #cbe7de;
 }
 .select_route_land > select{
     background-color: #059669;
-    color: white;
+    color: #cbe7de;
     border:none;
-    font-size: 18px;
-    font-weight: bold;
-    /* text-transform: uppercase; */
+    font-size: 14px;
+    font-weight: normal;
     width: 100%;
     margin-top: 2px;
     cursor: pointer;
     padding-left:3px;
+    transition: all 0.2s ease;
+}.select_route_land:hover > select{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
 }
 .select_route_land > select:focus, .select_route_land > select:active{
     outline: none;
