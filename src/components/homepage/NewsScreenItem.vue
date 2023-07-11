@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <div class="news_item"  @mouseenter="isHover = true"    @mouseleave="isHover = false">
+    <div class="news_item velo_shadow" @mouseenter="isHover = true" @mouseleave="isHover = false">
        <div class="news_item_img" style="background-image: url('src/assets/img/photo_bikers.jpg');"> </div>
         <div class="news_item_texts">
             <div class="news_item_type bg-emerald-600">
@@ -23,13 +23,13 @@ export default {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 
                 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /> </svg>
             </div>
-            <div class="news_item_date text-gray-400">12.05.23</div>
+            <div class="news_item_date text-gray-400">12 травня</div>
             <div class="news_item_title">Фрукти - важлива частина здорового харчування</div>
-            <div class="news_item_link">
-                <SimpleArrow :class="{ contonhover: isHover }" />
-            </div>
+            <div class="news_item_text">hasdgs dfhgsdfklh gsdfhgdsflj kghsdflgh sdflkghsdfklj ghsdfjklghsdfkl gjghsdfjklg hsdfkljgh kldfghdsf kljghsdfjklg</div>
         </div>
-        
+        <div class="news_item_link">
+            <SimpleArrow :class="{ contonhover: isHover }" />
+        </div>
     </div>
 </template>
 
@@ -37,12 +37,9 @@ export default {
     .news_item{
         /* max-width: 285px; */
         width:100%;
-        height:100%;
+        height:280px;
         cursor: pointer;
-        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-    }
-    .news_item:hover{
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
     }
     .news_item_img{
         width:100%;
@@ -53,9 +50,11 @@ export default {
     }
     .news_item_texts{
         position: relative;
-        min-height: 100px;
+        min-height: 60px;
+        height: 200px;
         background-color: white;
         padding: 10px 20px;
+        transition: all 0.4s ease;
     }
     .news_item_type{
         width: 40px;
@@ -75,11 +74,25 @@ export default {
         font-size: 12px;
     }
     .news_item_title{
-
+        font-weight: 400;
+    }
+    .news_item_text{
+        opacity: 0;
+	    transition: all 0.3s 0.2s ease;
+        margin-top:10px;
     }
     .news_item_link{
         position:absolute;
         bottom:10px;
         right:20px;
+    }
+    .news_item:hover .news_item_texts {
+        transform: translateY(-100px);
+    }
+    .news_item:hover .news_item_title{
+        font-weight: 700;
+    }
+    .news_item:hover .news_item_text {
+        opacity: 1;
     }
 </style>
