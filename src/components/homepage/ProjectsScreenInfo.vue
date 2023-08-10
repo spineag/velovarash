@@ -15,11 +15,11 @@ export default {
 </script>
 
 <template>
-    <div  @mouseenter="isHover=true" @mouseleave="isHover=false" class="flex">
+    <div  @mouseenter="isHover=true" @mouseleave="isHover=false" class="flex this-item">
         <div class="project_info_label bg-emerald-600">
             <span>XC</span>
         </div>
-        <div class="project_info_cont">
+        <div class="project_info_cont velo_shadow">
             <div class="text-gray-900 project_info_name">Меслибниця MOVE</div>
             <table class="project_info_stats"><tbody>
                 <tr>
@@ -90,6 +90,24 @@ export default {
     font-size: 24px;
     font-weight: bold;
 }
+/* .project_info_name:before {
+    position: absolute; 
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #059669;
+    bottom: 2px;
+    right: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: .2s ease;
+    opacity: .5;
+}
+.this-item:hover .project_info_name:before {
+    transform-origin: right;
+    transform: scaleX(1);
+}  */
 .project_info_stats{
     width: 100%;
 }   
@@ -102,6 +120,10 @@ export default {
     height: 20px;
     margin-right: 10px;
     fill: #9ca3af;
+    transition: .2s ease;
+}
+.this-item:hover svg {
+    fill: #059669;
 }
 .simple_arrow{
     position: absolute;

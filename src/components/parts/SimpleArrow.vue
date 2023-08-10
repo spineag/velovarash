@@ -41,4 +41,7 @@
     margin-right: 8px;
     transform: rotate(180deg);
 }
+.vertical_pos .link-icon .icon {
+    margin-top: 8px;
+}
 </style>
