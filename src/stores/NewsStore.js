@@ -1,7 +1,7 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, computed } from "vue";
+import { defineStore } from 'pinia';
 
-export const useNewsStore = defineStore('news', () => {
+export const useNewsStore = defineStore('newsStore', () => {
   const news = ref([
     {id:1, title: 'Disney підвищує тарифи Disney+', date:'1 липня', type:'news',
      preview:'https://itc.ua/wp-content/uploads/2023/08/107239681-1683811899003-gettyimages-1236668881-Exclusive_100-Minute_Sneak_Peek_Of_The_Beatles_Get_Back-835x470.png',
@@ -112,4 +112,4 @@ export const useNewsStore = defineStore('news', () => {
 //   function increment(){ count.value++ }
 
   return { news }
-})
+});

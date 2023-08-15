@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import SimpleArrow from '../parts/SimpleArrow.vue';
 
 export default {
@@ -12,6 +12,21 @@ export default {
     }
   }
 }
+</script> -->
+
+<script setup>
+import SimpleArrow from '../parts/SimpleArrow.vue';
+// import useNewsStore from '../../stores/NewsStore';
+
+// const newsStore = useNewsStore();
+const isHover = false;
+const props = defineProps({
+  news: {
+    type: Object,
+    required: true,
+    default: () => {},
+  }
+});
 </script>
 
 <template>

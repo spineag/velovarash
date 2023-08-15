@@ -1,10 +1,14 @@
 <script setup>
+import { useNewsStore } from '../../stores/NewsStore';
 import NewsItem from '../homepage/NewsScreenItem.vue';
 import TextArrow from '../parts/TextArrow.vue';
 import SimpleArrow from '../parts/SimpleArrow.vue';
+
+const newsStore = useNewsStore();
+
 </script>
 
-<script>
+<!-- <script>
 export default {
   components: {
     // TextArrow
@@ -19,7 +23,7 @@ export default {
     }
   }
 }
-</script>
+</script> -->
 
 <template>
     <div class="w-full bg_lines">
@@ -52,10 +56,10 @@ export default {
             </div>
             
             <div class="news_items_container">
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
+                <NewsItem v-for="news of newsStore.news" :key="news.id" :news="news" />
+                <!-- <NewsItem /> -->
+                <!-- <NewsItem /> -->
+                <!-- <NewsItem /> -->
             </div>
 
             <div class="news_nav_container">
