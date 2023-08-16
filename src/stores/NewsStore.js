@@ -108,8 +108,14 @@ export const useNewsStore = defineStore('newsStore', () => {
      preview:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJ2jXact3JAraU6x7hb7k-suO8c14aYfKHw&usqp=CAU',
      text:`Святкуємо сє свято вільними!`}
     ]);
-//   const doubleCount = computed(() => count.value * 2);
-//   function increment(){ count.value++ }
 
-  return { news }
+  let nType = ref('all');
+
+  const newsByType = computed(()=>
+    news.value.filter((el) => nType.value == 'all' || el.type == nType.value)
+  ); 
+
+  const setNewsType = (type) => nType.value = type;
+
+  return { news, newsByType, nType, setNewsType, }
 });
