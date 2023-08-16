@@ -10,10 +10,12 @@ const props = defineProps({
     type: Object,
     required: true,
     default: () => {},
-  }
+  },
+  itemWidth: Number,
 });
 
 const bg = ref('url("' + props.newsItem.preview + '")');
+const wdth = ref(props.itemWidth + 'px');
 
 function adaptiveText(txt){
     if (txt.length < 120) return txt;
@@ -52,8 +54,8 @@ function adaptiveText(txt){
 
 <style scoped>
     .news_item{
-        /* max-width: 285px; */
-        width:100%;
+        min-width:v-bind(wdth);
+        width:v-bind(wdth);
         height:280px;
         cursor: pointer;
         overflow: hidden;

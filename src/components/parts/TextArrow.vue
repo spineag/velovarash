@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <a href="#" class="link" @mouseenter="isHover = true"    @mouseleave="isHover = false">
+    <a href="#" class="link" @mouseenter="isHover = true"  @mouseleave="isHover = false">
         <span class="mask">
             <div class="link-container">
                 <span class="link-title1 arrow_title">{{ title_text }}</span>

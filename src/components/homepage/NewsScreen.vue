@@ -15,6 +15,17 @@ function chooseNewsType(nType){
     ar = document.querySelectorAll(`.news_btn_icon.${nType}_btn`);
     ar = [...ar];
     if (ar.length) ar[0].classList.add('active_btn_icon');
+    offset.value = 0;
+}
+
+let offset = ref(0), itemWidth = ref(305), size = 4; 
+const atEndOfList = computed(() => offset.value <= itemWidth.value*(size - newsStore.newsByType.length));
+const atHeadOfList = computed(() => offset.value >= 0);
+function moveCarousel(direction) {
+    console.log(atEndOfList._value);
+    console.log(atHeadOfList._value);
+    if (direction === 1 && !atEndOfList._value) offset.value -= itemWidth.value + 20;
+    else if (direction === -1 && !atHeadOfList._value) offset.value += itemWidth.value + 20;
 }
 
 </script>
@@ -49,13 +60,15 @@ function chooseNewsType(nType){
             </div>
             
             <div class="news_items_container">
-                <NewsItem v-for="nws of newsStore.newsByType" :key="nws.id" :newsItem="nws" />
+                    <div class="news_items_carousel flex" :style="{ transform: 'translateX' + '(' + offset + 'px' + ')'}">
+                        <NewsItem v-for="nws of newsStore.newsByType" :key="nws.id" :newsItem="nws" :itemWidth="itemWidth" class="news_item"/>
+                    </div>
             </div>
 
             <div class="news_nav_container">
                 <div class="flex">
-                    <SimpleArrow class="rotate180"/>
-                    <SimpleArrow />
+                    <SimpleArrow @click="moveCarousel(-1)" class="rotate180" :class="{ disabled: atHeadOfList }"/>
+                    <SimpleArrow @click="moveCarousel(1)" :class="{ disabled: atEndOfList }"/>
                 </div>
                 <TextArrow title_text="Всі новини"></TextArrow>
             </div>
@@ -95,14 +108,26 @@ function chooseNewsType(nType){
     stroke:green;
 }
 .news_items_container{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 20px; */
+    /* display: flex;
+    justify-content: center; */
+    width: 100%;
+    overflow:hidden;
+    padding-bottom:8px;
+}
+.news_items_carousel {
+  display: flex;
+  transition: transform 150ms ease-out;
+  transform: translatex(0px);
 }
 .news_nav_container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 12px 0 20px 0;
 }
+.news_item{ margin-right: 20px; }
+.news_item:last-child{ margin-right: 0; }
 </style>

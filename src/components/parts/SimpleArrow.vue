@@ -30,7 +30,7 @@
     width:16px;
     height:16px;
     fill:inherit;
-    }
+}
 .icon2 { transform: translate(-32px); }
 .contonhover .icon1 { transform: translate(32px); }
 .contonhover .icon2 { transform: translate(0px); }
@@ -43,5 +43,10 @@
 }
 .vertical_pos .link-icon .icon {
     margin-top: 8px;
+}
+.link-icon.disabled{
+    color: #e5e7eb;
+    stroke: #e5e7eb;
+    pointer-events: none;
 }
 </style>
