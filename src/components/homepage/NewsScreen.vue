@@ -30,32 +30,60 @@ function moveCarousel(direction) {
     else if (direction === -1 && !atHeadOfList._value) offset.value += itemWidth.value + 20;
 }
 
-let contSlider, isDown = false, startX, scrollLeft;
+let contSlider, isDown = false, startX, startPos, newOffset, xLast, delta;
 function initSlider(){
     contSlider.addEventListener('mousedown', startSlide);
 	contSlider.addEventListener('touchstart', startSlide);
-	contSlider.addEventListener('mousemove', moveSlide);
+}
+const endSlide = () => {
+    isDown = false;
+    contSlider.classList.remove('active');
+    if (delta < 0) {
+        newOffset = parseInt(newOffset/(itemWidth.value + 20) - 1) * (itemWidth.value + 20);
+        if (newOffset < itemWidth.value*(size - newsStore.newsByType.length))
+            newOffset = itemWidth.value*(size - newsStore.newsByType.length) - 40;
+    } else {
+        newOffset = parseInt(newOffset/(itemWidth.value + 20)) * (itemWidth.value + 20);
+        if (newOffset > 0)
+            newOffset = 0;
+    }
+    offset.value = newOffset;
+    contSlider.removeEventListener('mousemove', moveSlide);
+	contSlider.removeEventListener('touchmove', moveSlide);
+	contSlider.removeEventListener('mouseleave', endSlide);
+	contSlider.removeEventListener('mouseup', endSlide);
+	contSlider.removeEventListener('touchend', endSlide);
+}
+const startSlide = (e) => {
+    isDown = true;
+    contSlider.classList.add('active');
+    startX = e.pageX || e.touches[0].pageX;
+    xLast = startX;
+    startPos = offset.value;
+    contSlider.addEventListener('mousemove', moveSlide);
 	contSlider.addEventListener('touchmove', moveSlide);
 	contSlider.addEventListener('mouseleave', endSlide);
 	contSlider.addEventListener('mouseup', endSlide);
 	contSlider.addEventListener('touchend', endSlide);
 }
-const endSlide = () => {
-    isDown = false;
-    contSlider.classList.remove('active');
-}
-const startSlide = (e) => {
-    isDown = true;
-    contSlider.classList.add('active');
-    startX = e.pageX || e.touches[0].pageX - contSlider.offsetLeft;
-    scrollLeft = contSlider.scrollLeft;	
-}
 const moveSlide = (e) => {
 	if(!isDown) return;
     e.preventDefault();
-    const x = e.pageX || e.touches[0].pageX - contSlider.offsetLeft;
-    const dist = (x - startX);
-    contSlider.scrollLeft = scrollLeft - dist;
+    let x = e.pageX || e.touches[0].pageX;
+    newOffset = x - startX + startPos;
+    if (newOffset < itemWidth.value*(size - newsStore.newsByType.length)) {
+        newOffset = itemWidth.value*(size - newsStore.newsByType.length) - 40;
+        x = xLast;
+    } else if (newOffset > 0) {
+        newOffset = 0;
+        x = xLast;
+    }
+    offset.value = newOffset;
+    if (x == xLast) {
+        if (delta < 0) delta = -1;
+        else delta = 1;
+    } else delta = x - xLast;
+    xLast = x;
 } 
 
 onMounted(() => {
@@ -98,7 +126,7 @@ onMounted(() => {
             </div>
             
             <div class="news_items_container">
-                    <div class="news_items_carousel flex" :style="{ transform: 'translateX' + '(' + offset + 'px' + ')'}">
+                    <div class="news_items_carousel flex" :style="{ transform: 'translateX('+ offset +'px)'}">
                         <NewsItem v-for="nws of newsStore.newsByType" :key="nws.id" :newsItem="nws" :itemWidth="itemWidth" class="news_item"/>
                     </div>
             </div>
@@ -154,10 +182,14 @@ onMounted(() => {
 }
 .news_items_carousel {
   display: flex;
-  transition: transform 150ms ease-out;
   transform: translatex(0px);
+  transition: transform 150ms ease-out;
 }
-.news_items_carousel.active{ cursor:grab; }
+.news_items_carousel.active{ 
+    cursor:grab;
+    transition: transform 0ms ease-out; 
+    user-select: none;
+}
 .news_nav_container{
     display: flex;
     align-items: center;
