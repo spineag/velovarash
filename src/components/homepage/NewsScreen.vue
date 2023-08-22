@@ -1,9 +1,13 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useNewsStore } from '../../stores/NewsStore';
 import NewsItem from '../homepage/NewsScreenItem.vue';
 import TextArrow from '../parts/TextArrow.vue';
 import SimpleArrow from '../parts/SimpleArrow.vue';
+
+const observer = new IntersectionObserver((entries, observer) => {
+  console.log(entries)
+});
 
 const newsStore = useNewsStore();
 
@@ -22,13 +26,47 @@ let offset = ref(0), itemWidth = ref(305), size = 4;
 const atEndOfList = computed(() => offset.value <= itemWidth.value*(size - newsStore.newsByType.length));
 const atHeadOfList = computed(() => offset.value >= 0);
 function moveCarousel(direction) {
-    console.log(atEndOfList._value);
-    console.log(atHeadOfList._value);
     if (direction === 1 && !atEndOfList._value) offset.value -= itemWidth.value + 20;
     else if (direction === -1 && !atHeadOfList._value) offset.value += itemWidth.value + 20;
 }
 
+let contSlider, isDown = false, startX, scrollLeft;
+function initSlider(){
+    contSlider.addEventListener('mousedown', startSlide);
+	contSlider.addEventListener('touchstart', startSlide);
+	contSlider.addEventListener('mousemove', moveSlide);
+	contSlider.addEventListener('touchmove', moveSlide);
+	contSlider.addEventListener('mouseleave', endSlide);
+	contSlider.addEventListener('mouseup', endSlide);
+	contSlider.addEventListener('touchend', endSlide);
+}
+const endSlide = () => {
+    isDown = false;
+    contSlider.classList.remove('active');
+}
+const startSlide = (e) => {
+    isDown = true;
+    contSlider.classList.add('active');
+    startX = e.pageX || e.touches[0].pageX - contSlider.offsetLeft;
+    scrollLeft = contSlider.scrollLeft;	
+}
+const moveSlide = (e) => {
+	if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX || e.touches[0].pageX - contSlider.offsetLeft;
+    const dist = (x - startX);
+    contSlider.scrollLeft = scrollLeft - dist;
+} 
+
+onMounted(() => {
+    contSlider = document.querySelector('.news_items_carousel');
+    observer.observe(contSlider);
+    initSlider();
+})
+
 </script>
+
+
 
 <template>
     <div class="w-full bg_lines">
@@ -77,6 +115,8 @@ function moveCarousel(direction) {
     </div>
 </template>
 
+
+
 <style scoped>
 .bg_lines:before{
     content: ' ';
@@ -108,11 +148,6 @@ function moveCarousel(direction) {
     stroke:green;
 }
 .news_items_container{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px; */
-    /* display: flex;
-    justify-content: center; */
     width: 100%;
     overflow:hidden;
     padding-bottom:8px;
@@ -122,6 +157,7 @@ function moveCarousel(direction) {
   transition: transform 150ms ease-out;
   transform: translatex(0px);
 }
+.news_items_carousel.active{ cursor:grab; }
 .news_nav_container{
     display: flex;
     align-items: center;
