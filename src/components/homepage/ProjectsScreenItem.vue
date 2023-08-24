@@ -1,5 +1,11 @@
 <script setup>
-
+const props = defineProps({
+  projItem: {
+    type: Object,
+    required: true,
+    default: () => {},
+  }
+});
 </script>
 
 

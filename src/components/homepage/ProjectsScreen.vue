@@ -1,7 +1,15 @@
 <script setup>
+import { ref, computed, onMounted } from "vue";
+import { useProjectStore } from '../../stores/ProjectStore';
 import ProjectItem from '../homepage/ProjectsScreenItem.vue';
 import ProjectInfo from '../homepage/ProjectsScreenInfo.vue';
 import TextArrow from '../parts/TextArrow.vue';
+
+const projectStore = useProjectStore();
+
+let activeProj = ref();
+// activeProj = projectStore.forScreen[0];
+
 </script>
 
 <template>
@@ -18,10 +26,7 @@ import TextArrow from '../parts/TextArrow.vue';
                 <div class="text-gray-900 text-center">Проекти</div>
             </div>
             <div class="projects_items_container pointer-events-auto">
-                <ProjectItem />
-                <ProjectItem />
-                <ProjectItem />
-                <ProjectItem />
+                <ProjectItem v-for="proj of projectStore.forScreen" :key="proj.id" :projItem="proj" />
                 <div class="all_projects_item">
                     <TextArrow class="vertical_pos" title_text="Всі проекти"></TextArrow>
                 </div>

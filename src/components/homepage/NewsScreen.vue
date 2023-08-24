@@ -16,7 +16,7 @@ function chooseNewsType(nType){
     let ar = document.querySelectorAll('.news_btn_icon');
     ar = [...ar];
     if (ar.length) ar.forEach(el => el.classList.remove('active_btn_icon'));
-    ar = document.querySelectorAll(`.news_btn_icon.${nType}_btn`);
+    ar = document.querySelectorAll('.news_btn_icon.'+nType+'_btn');
     ar = [...ar];
     if (ar.length) ar[0].classList.add('active_btn_icon');
     offset.value = 0;
