@@ -6,7 +6,7 @@ export const useProjectStore = defineStore('projectStore', () => {
     {
         id: 1,
         name: 'Качайгорб',
-        type: 'PT',
+        kind: 'PT',
         length: 0.1,
         hard: 2,
         elev: 10,
@@ -21,7 +21,7 @@ export const useProjectStore = defineStore('projectStore', () => {
     },{
         id: 2,
         name: '100 ВелоВатт',
-        type: 'XCM',
+        kind: 'XCM',
         length: 100,
         hard: 1,
         elev: 174,
@@ -36,7 +36,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:3,
         name: 'Хомецька',
-        type: 'XCO',
+        kind: 'XCO',
         length: 4.6,
         hard: 2,
         elev: 74,
@@ -51,7 +51,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:4,
         name: 'Поліська Січ',
-        type: 'MDR', // multi-day race
+        kind: 'MDR', // multi-day race
         length: 300,
         hard: 2,
         elev: 1267,
@@ -67,7 +67,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:5,
         name: '100 миль',
-        type: 'XCM', // 
+        kind: 'XCM', // 
         length: 162,
         hard: 4,
         elev: 1571,
@@ -82,7 +82,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:6,
         name: 'Медове коло',
-        type: 'free', // 
+        kind: 'free', // 
         length: 250,
         hard: 2,
         elev: 923,
@@ -98,7 +98,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:7,
         name: 'TransUkraine',
-        type: 'MDR', // 
+        kind: 'MDR', // 
         length: 1500,
         hard: 3,
         elev: 5000,
@@ -114,7 +114,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:8,
         name: 'Gravel 200',
-        type: 'XCM', // 
+        kind: 'XCM', // 
         length: 200,
         hard: 3,
         elev: 820,
@@ -130,7 +130,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       },{
         id:9,
         name: 'Randonneurs',
-        type: 'MDR', // 
+        kind: 'MDR', // 
         length: 1200,
         hard: 4,
         elev: '',
@@ -146,7 +146,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       }
   ]);
 
-  const forScreen = ()=> { return projects.value.slice(0,4) };
+  const forScreen = computed(() => projects.value.slice(0,4) );
 
   return { projects, forScreen }
 

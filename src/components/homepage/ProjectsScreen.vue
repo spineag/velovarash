@@ -7,14 +7,21 @@ import TextArrow from '../parts/TextArrow.vue';
 
 const projectStore = useProjectStore();
 
-let activeProj = ref();
-// activeProj = projectStore.forScreen[0];
+let activeProj = ref(projectStore.forScreen[0]);
+const bgScreen = computed(()=>
+    'url("' + activeProj.value.photo + '")'
+  ); 
+
+function onChooseItem(project){
+    activeProj.value = project;
+    console.log(activeProj.value.photo);
+}
 
 </script>
 
 <template>
     <div class="w-full">
-        <div class="project_preview" style="background-image: url('src/assets/img/photo_bikers.jpg');">
+        <div class="project_preview">
             <div class="velo_container h-full">
                 <div class="project_info">
                     <ProjectInfo />
@@ -26,7 +33,7 @@ let activeProj = ref();
                 <div class="text-gray-900 text-center">Проекти</div>
             </div>
             <div class="projects_items_container pointer-events-auto">
-                <ProjectItem v-for="proj of projectStore.forScreen" :key="proj.id" :projItem="proj" />
+                <ProjectItem v-for="proj of projectStore.forScreen" :key="proj.id" :projItem="proj" @project-choose-click="onChooseItem"/>
                 <div class="all_projects_item">
                     <TextArrow class="vertical_pos" title_text="Всі проекти"></TextArrow>
                 </div>
@@ -49,6 +56,7 @@ let activeProj = ref();
     background-size: cover;
     position: absolute;
     top: 248px;
+    background-image: v-bind(bgScreen);
 }
 .project_info{
     position: absolute;

@@ -1,4 +1,6 @@
 <script setup>
+import { ref, computed } from "vue";
+
 const props = defineProps({
   projItem: {
     type: Object,
@@ -6,17 +8,20 @@ const props = defineProps({
     default: () => {},
   }
 });
+
+const bg = ref('url("' + props.projItem.preview + '")');
+
 </script>
 
 
 <template>
-    <div class="cursor-pointer velo_shadow this_item relative">
-        <div class="w-full img_div" style="background-image: url('src/assets/img/photo_bikers.jpg');"></div>
+    <div class="cursor-pointer velo_shadow this_item relative" @click=" $emit('projectChooseClick', projItem) " >
+        <div class="w-full img_div"></div>
         <div class="w-full text-gray-900 txt_div">
-            <span>Меслибниця MOVE</span>
+            <span>{{ projItem.name }}</span>
         </div>
-        <div class="route_type">
-            XC
+        <div class="route_kind">
+            {{ projItem.kind }}
         </div>
     </div>
 </template>
@@ -27,7 +32,8 @@ const props = defineProps({
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter:grayscale(.75);
+    filter:grayscale(.5);
+    background-image: v-bind(bg);
 }
 .txt_div{
     background-color: white;
@@ -39,12 +45,12 @@ const props = defineProps({
     text-transform: uppercase;
     text-align: 1;
 }
-.route_type{
+.route_kind{
     position: absolute;
-    top:0;
-    right:0;
-    width: 20px;
-    height: 20px;
+    top:5px;
+    right:5px;
+    text-align: right;
+    line-height: 1;
     font-size: 14px;
     background-color: transparent;
     color: white;
@@ -58,11 +64,9 @@ const props = defineProps({
 .this_item:hover .img_div{
     filter:grayscale(0);
 }
-.this_item:hover  .route_type{
-    font-size: 20px;
+.this_item:hover  .route_kind{
+    font-size: 18px;
     opacity: 1;
-    widows: 30px;
-    height: 30px;
-    right:10px;
+    font-weight: 700;
 }
 </style>
