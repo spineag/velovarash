@@ -18,7 +18,7 @@ import RoutesScreenItem from './RoutesScreenItem.vue';
                         <select id="route_land">
                             <option value="-1" selected>Будь-яке</option>
                             <option value="1">Асфальт</option>
-                            <option value="2">Дорога</option>
+                            <option value="2">Сошейка</option>
                             <option value="3">Бездоріжжя</option>
                             <option value="4">Гравій</option>
                             <option value="5">Грунт</option>
@@ -28,16 +28,17 @@ import RoutesScreenItem from './RoutesScreenItem.vue';
                         <label for="route_land">Складність</label>
                         <select id="route_land">
                             <option value="-1" selected>Будь-яка</option>
-                            <option value="1">Низька</option>
-                            <option value="2">Середня</option>
-                            <option value="3">Важка</option>
-                            <option value="4">Дуже важка</option>
+                            <option value="1">Початкова</option>
+                            <option value="2">Легка</option>
+                            <option value="3">Середня</option>
+                            <option value="4">Висока</option>
+                            <option value="5">Дуже висока</option>
                         </select>
                     </div>
                     <div class="select_route_land bg-emerald-600">
                         <label for="route_land">Дистанція</label>
                         <select id="route_land">
-                            <option value="-1"  selected>Будь-яка</option>
+                            <option value="-1" selected>Будь-яка</option>
                             <option value="1">Коротка</option>
                             <option value="2">Середня</option>
                             <option value="3">Довга</option>

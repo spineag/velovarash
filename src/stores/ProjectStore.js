@@ -8,7 +8,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: 'Качайгорб',
         kind: 'PT',
         length: 0.1,
-        hard: 2,
+        hard: 1,
         elev: 10,
         type: 'sport,training',
         time: 752,
@@ -53,7 +53,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: 'Поліська Січ',
         kind: 'MDR', // multi-day race
         length: 300,
-        hard: 2,
+        hard: 3,
         elev: 1267,
         type: 'tourism',
         time: 30*60*60,
@@ -100,7 +100,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: 'TransUkraine',
         kind: 'MDR', // 
         length: 1500,
-        hard: 3,
+        hard: 5,
         elev: 5000,
         type: 'tourism',
         time: 7*24*60*60,
@@ -116,7 +116,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: 'Gravel 200',
         kind: 'XCM', // 
         length: 200,
-        hard: 3,
+        hard: 4,
         elev: 820,
         type: 'sport',
         time: 7*24*60*60,
@@ -132,7 +132,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: 'Randonneurs',
         kind: 'MDR', // 
         length: 1200,
-        hard: 4,
+        hard: 5,
         elev: '',
         type: 'brevet',
         time: '',

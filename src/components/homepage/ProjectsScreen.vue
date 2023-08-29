@@ -14,7 +14,6 @@ const bgScreen = computed(()=>
 
 function onChooseItem(project){
     activeProj.value = project;
-    console.log(activeProj.value.photo);
 }
 
 </script>
@@ -24,7 +23,7 @@ function onChooseItem(project){
         <div class="project_preview">
             <div class="velo_container h-full">
                 <div class="project_info">
-                    <ProjectInfo />
+                    <ProjectInfo :projItem="activeProj"/>
                 </div>
             </div>
         </div>
