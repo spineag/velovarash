@@ -55,6 +55,7 @@ function onChooseItem(project){
     background-size: cover;
     position: absolute;
     top: 248px;
+    background-color: #e5e7eb;
     background-image: v-bind(bgScreen);
 }
 .project_info{
