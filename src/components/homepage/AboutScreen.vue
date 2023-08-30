@@ -1,11 +1,12 @@
 <script setup>
 import TextArrow from '../parts/TextArrow.vue';
+import AboutPhotoGallery from 'AboutPhotoGallery.vue';
 </script>
 
 <template>
     <div class="w-full about_section">
         <div class="about_image"></div> 
-        <!-- https://codepen.io/noeldelgado/pen/nweYMz -->
+        <!-- <AboutPhotoGallery /> -->
         <div class="about_cont bg-emerald-600">
             <div class="about_texts">
                 <div class="velo_section_title inline-block">
