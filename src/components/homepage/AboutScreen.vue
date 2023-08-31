@@ -1,6 +1,6 @@
 <script setup>
 import TextArrow from '../parts/TextArrow.vue';
-import AboutPhotoGallery from 'AboutPhotoGallery.vue';
+import AboutPhotoGallery from '../homepage/AboutPhotoGallery.vue';
 </script>
 
 <template>

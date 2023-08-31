@@ -14,73 +14,14 @@
         ></l-tile-layer>
 
         <l-geo-json :geojson="geojson" :options-style="geoStyler"></l-geo-json>
+
+        <!-- <l-control-zoom position="bottomright" zoom-in-text="*" zoom-out-text="/" /> -->
         
         <!-- <l-circle :lat-lng="[51.3426, 25.9672]" :radius="500" color="green" /> -->
         <l-circle-marker :lat-lng="[51.34317, 25.96688]" :radius="10" color="#059669" fillOpacity=1 fillColor="#059669" />
         <l-circle-marker :lat-lng="[51.49247, 25.76043]" :radius="10" color="orange" fillOpacity=1 fillColor="orange" />
 
-        <!-- <l-control-layers />     -->
-        <!-- <l-marker :lat-lng="[0, 0]" draggable @moveend="log('moveend')">
-          <l-tooltip>
-            lol
-          </l-tooltip>
-        </l-marker> -->
-  
-        <!-- <l-marker :lat-lng="[51.3489, 25.8526]">
-          <l-icon :icon-url="iconUrl" :icon-size="iconSize" />
-        </l-marker> -->
-  
-        <!-- <l-marker :lat-lng="[50, 50]" draggable @moveend="log('moveend')">
-          <l-popup>
-            lol
-          </l-popup>
-        </l-marker> -->
-  
-        <!-- <l-polyline
-          :lat-lngs="[
-            [47.334852, -1.509485],
-            [47.342596, -1.328731],
-            [47.241487, -1.190568],
-            [47.234787, -1.358337],
-          ]"
-          color="green"
-        ></l-polyline> -->
-        <!-- <l-polygon
-          :lat-lngs="[
-            [46.334852, -1.509485],
-            [46.342596, -1.328731],
-            [46.241487, -1.190568],
-            [46.234787, -1.358337],
-          ]"
-          color="#41b782"
-          :fill="true"
-          :fillOpacity="0.5"
-          fillColor="#41b782"
-        /> -->
-        <!-- <l-rectangle
-          :lat-lngs="[
-            [46.334852, -1.509485],
-            [46.342596, -1.328731],
-            [46.241487, -1.190568],
-            [46.234787, -1.358337],
-          ]"
-          :fill="true"
-          color="#35495d"
-        /> -->
-        <!-- <l-rectangle
-          :bounds="[
-            [46.334852, -1.190568],
-            [46.241487, -1.090357],
-          ]"
-        >
-          <l-popup>
-            lol
-          </l-popup>
-        </l-rectangle> -->
-
-
       </l-map>
-      <!-- <button @click="changeIcon">New kitten icon</button> -->
     </div>
     <div class="w-full velo_bg_map inner_shadow">
 
@@ -94,6 +35,7 @@
     LTileLayer,
     // LMarker,
     LControlLayers,
+    // LControlZoom, :scrollWheelZoom="false"
     // LTooltip,
     // LPopup,
     // LPolyline,
@@ -112,6 +54,7 @@
       LTileLayer,
       // LMarker,
       LControlLayers,
+      // LControlZoom,
       // LTooltip,
       // LPopup,
       // LPolyline,
@@ -169,10 +112,13 @@
   </style>
 
   <style>
+  .leaflet-container{
+    pointer-events: none !important;
+  }
   .leaflet-tile-container{
     filter: grayscale(.7)  brightness(107%);
   }
   .leaflet-control-zoom{
-    display: none;
+    /* display: none; */
   }
   </style>
