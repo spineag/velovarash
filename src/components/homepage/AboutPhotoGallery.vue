@@ -2,8 +2,9 @@
 <!-- https://codepen.io/spineag/pen/RwEaMYa -->
 
 <script setup>
+import { ref, computed, onMounted } from "vue";
 
-let ar=[
+const arrayUrls = ref([
     {url1:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHYqz-67pjHTny8LUzB15YX0cNbjhChKJLVVrxDK6uBz1E5DPK1cgPnfVVh3L-Q_gHXA&usqp=CAU', 
      url2:'https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2020/02/Pune-%E2%80%93-Panshet-Dam-cycle-tour.jpg?fit=800%2C530&ssl=1'},
     {url1:'https://img1.oastatic.com/img2/37318242/420x237r/.jpg', 
@@ -40,50 +41,54 @@ let ar=[
      url2:'https://www.visitcompletecare.com/wp-content/uploads/2022/03/shutterstock_209499430-1.webp'},
     {url1:'https://indianewsdiary.com/wp-content/uploads/2022/03/IMG-20220313-WA0007.jpg', 
      url2:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdcTMsfSoLA6Gt-FZ43EisgL6LHaNv2o0MqnXoqBiBJ6NJLH0TRdbc57HtcjcMDqB2Dc&usqp=CAU'},
-];
+    {url1:'https://images.immediate.co.uk/production/volatile/sites/21/2021/11/The-Fred-Whitton-This-is-hardcore-04-6d1de06.jpg?quality=90&resize=620,413', 
+     url2:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBv6XVKCaNe1-iiqGbbyGEHd6O1vW3izAJyA&usqp=CAU'},
+    {url1:'https://i.ytimg.com/vi/J7eClQXVyfo/mqdefault.jpg', 
+     url2:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC2VZBbjwxiRWz2PPmD-hVIYws5RAD2vRDzHHXbZGtBx4N2AAsj5WV7-Bt-q1jYed5fKY&usqp=CAU'},
+]);
 
 function initPics(){
-    const nodes = [].slice.call(document.querySelectorAll('li'), 0);
+    const nodes = [].slice.call(document.querySelectorAll('.layer_item_cont'), 0);
     const directions  = { 0: 'top', 1: 'right', 2: 'bottom', 3: 'left' };
     const classNames = ['in', 'out'].map((p) => Object.values(directions).map((d) => `${p}-${d}`)).reduce((a, b) => a.concat(b));
 
     const getDirectionKey = (ev, node) => {
-    const { width, height, top, left } = node.getBoundingClientRect();
-    const l = ev.pageX - (left + window.pageXOffset);
-    const t = ev.pageY - (top + window.pageYOffset);
-    const x = (l - (width/2) * (width > height ? (height/width) : 1));
-    const y = (t - (height/2) * (height > width ? (width/height) : 1));
-    return Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
-    }
+		const { width, height, top, left } = node.getBoundingClientRect();
+		const l = ev.pageX - (left + window.pageXOffset);
+		const t = ev.pageY - (top + window.pageYOffset);
+		const x = (l - (width/2) * (width > height ? (height/width) : 1));
+		const y = (t - (height/2) * (height > width ? (width/height) : 1));
+		return Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+	}
 
-    class Item {
-        constructor(element) {
-            this.element = element;    
-            this.element.addEventListener('mouseover', (ev) => this.update(ev, 'in'));
-            this.element.addEventListener('mouseout', (ev) => this.update(ev, 'out'));
-        }
-        
-        update(ev, prefix) {
-            this.element.classList.remove(...classNames);
-            this.element.classList.add(`${prefix}-${directions[getDirectionKey(ev, this.element)]}`);
-        }
-    }
+	class Item {
+		constructor(element) {
+			this.element = element;    
+			this.element.addEventListener('mouseover', (ev) => this.update(ev, 'in'));
+			this.element.addEventListener('mouseout', (ev) => this.update(ev, 'out'));
+		}
+		
+		update(ev, prefix) {
+			this.element.classList.remove(...classNames);
+			this.element.classList.add(`${prefix}-${directions[getDirectionKey(ev, this.element)]}`);
+		}
+	}
 
-    nodes.forEach(node => new Item(node));
+	nodes.forEach(node => new Item(node));
 }
+
+onMounted(()=>{
+	initPics();
+});
 
 </script>
 
 <template>
     <div class="cont">
-        <ul>
-            <li>
-                <a class="normal" href="#">  </a>
-                <div class="info">
-                <p>h messenger bshorts.</p>
-                </div>
-            </li>
-        </ul>
+		<div class="layer_item_cont" v-for="obj in arrayUrls" :key = "obj.url1">
+			<div class="layer1" :style="{'background-image': 'url( '+obj.url1+' )'}">  </div>
+			<div class="layer2" :style="{'background-image': 'url( '+obj.url2+' )'}">  </div>
+		</div>
     </div>
 </template>
 
@@ -91,54 +96,70 @@ function initPics(){
 .cont{
     width:50%;
     height:100%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+	gap: 0;
+	justify-content: right;
+	z-index: 2;
 }
-
-/* the important bits */
- li {
-	 perspective: 400px;
+.layer_item_cont {
+	width: 250px;
+	height: 150px;
 }
- .info {
-	 transform: rotate3d(1, 0, 0, 90deg);
-	 width: 100%;
-	 height: 100%;
-	 padding: 20px;
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 border-radius: 4px;
-	 pointer-events: none;
-	 background-color: rgba(26, 188, 156, 0.9);
+.layer1 {
+	width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
- .in-top .info {
-	 transform-origin: 50% 0%;
+.layer2 {
+	transform: rotate3d(1, 0, 0, 90deg);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ .in-top .layer2 {
+	 transform-origin: 0% 0%;
 	 animation: in-top 300ms ease 0ms 1 forwards;
 }
- .in-right .info {
+ .in-right .layer2 {
 	 transform-origin: 100% 0%;
 	 animation: in-right 300ms ease 0ms 1 forwards;
 }
- .in-bottom .info {
-	 transform-origin: 50% 100%;
+ .in-bottom .layer2 {
+	 transform-origin: 0% 100%;
 	 animation: in-bottom 300ms ease 0ms 1 forwards;
 }
- .in-left .info {
+ .in-left .layer2 {
 	 transform-origin: 0% 0%;
 	 animation: in-left 300ms ease 0ms 1 forwards;
 }
- .out-top .info {
-	 transform-origin: 50% 0%;
+ .out-top .layer2 {
+	 transform-origin: 0% 0%;
+	 height: 0;
 	 animation: out-top 300ms ease 0ms 1 forwards;
 }
- .out-right .info {
-	 transform-origin: 100% 50%;
+ .out-right .layer2 {
+	 transform-origin: 100% 0%;
+	 height: 0;
 	 animation: out-right 300ms ease 0ms 1 forwards;
 }
- .out-bottom .info {
-	 transform-origin: 50% 100%;
+ .out-bottom .layer2 {
+	 transform-origin: 0% 100%;
+	 height: 0;
 	 animation: out-bottom 300ms ease 0ms 1 forwards;
 }
- .out-left .info {
+ .out-left .layer2 {
 	 transform-origin: 0% 0%;
+	 height: 0;
 	 animation: out-left 300ms ease 0ms 1 forwards;
 }
  @keyframes in-top {
@@ -205,78 +226,6 @@ function initPics(){
 		 transform: rotate3d(0, 1, 0, 104deg);
 	}
 }
-/* you can ignore this ones */
-
- li {
-	 position: relative;
-	 float: left;
-	 width: 200px;
-	 height: 200px;
-	 margin: 5px;
-	 padding: 0;
-	 list-style: none;
-}
- li a {
-	 display: inline-block;
-	 vertical-align: top;
-	 text-decoration: none;
-	 border-radius: 4px;
-}
- li h3 {
-	 margin: 0;
-	 font-size: 16px;
-	 color: rgba(255, 255, 255, 0.9);
-}
- li p {
-	 font-size: 12px;
-	 line-height: 1.5;
-	 color: rgba(255, 255, 255, 0.8);
-}
- li .normal {
-	 width: 100%;
-	 height: 100%;
-	 background-color: #ecf0f1;
-	 color: rgba(52, 73, 94, 0.6);
-	 box-shadow: inset 0 2px 20px #e6ebed;
-	 text-align: center;
-	 font-size: 50px;
-	 line-height: 200px;
-}
- li .normal svg {
-	 pointer-events: none;
-	 width: 50px;
-}
- li .normal svg path {
-	 fill: rgba(52, 73, 94, 0.2);
-}
- * {
-	 box-sizing: border-box;
-}
- body {
-	 background-color: #fff;
-}
- h1 {
-	 margin: 0 auto 5px;
-	 text-align: center;
-}
- h3 {
-	 font-family: 'Bree Serif', serif;
-}
- .container {
-	 width: 840px;
-	 margin: 0 auto;
-}
- header {
-	 font-family: 'Bree Serif', serif;
-	 text-align: center;
-	 margin: 50px 0 25px;
-	 color: #34495e;
-}
- header p {
-	 margin: 0;
-	 color: rgba(52, 73, 94, 0.4);
-}
- 
 
 
 </style>

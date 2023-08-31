@@ -5,8 +5,8 @@ import AboutPhotoGallery from '../homepage/AboutPhotoGallery.vue';
 
 <template>
     <div class="w-full about_section">
-        <div class="about_image"></div> 
-        <!-- <AboutPhotoGallery /> -->
+        <!-- <div class="about_image"></div>  -->
+        <AboutPhotoGallery />
         <div class="about_cont bg-emerald-600">
             <div class="about_texts">
                 <div class="velo_section_title inline-block">
