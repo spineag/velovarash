@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="help_overlay">
-            <div class="help_overlay_img" style="background-image: url('src/assets/img/repair_man1.png');"> </div>
+            <div class="help_overlay_img" style="background-image: url('https://c8.alamy.com/zooms/9/c89cf5f0abcd4d93aec8f456ff1d895d/pyen54.jpg');"> </div>
             <div class="help_overlay_line">
                 <span>099 999 99 99</span>
                 <span>Володимирко</span>
