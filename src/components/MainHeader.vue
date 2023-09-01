@@ -11,11 +11,16 @@
                 </div>
             </RouterLink>
 
-            <RouterLink to="/news"><span>Новини</span></RouterLink>
-            <RouterLink to="/projects"><span>Проекти</span></RouterLink>
-            <RouterLink to="/routes"><span>Маршрути</span></RouterLink>
-            <RouterLink to="/about"><span>Веловараш</span></RouterLink>
-            <RouterLink to="/help"><span>Допомога</span></RouterLink>
+            <RouterLink to="/news" class="text_link"><span>Новини</span></RouterLink>
+            <RouterLink to="/projects" class="text_link"><span>Проекти</span></RouterLink>
+            <RouterLink to="/routes" class="text_link"><span>Маршрути</span></RouterLink>
+            <RouterLink to="/about" class="text_link"><span>Веловараш</span></RouterLink>
+            <RouterLink to="/help" class="text_link"><span>Допомога</span></RouterLink>
+            <div class="burger_link_cont">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
         </nav>
     </div>
 </template>
@@ -71,5 +76,29 @@ nav span:hover:before {
     transform-origin: right;
     transform: scaleX(1);
 } 
+.burger_link_cont{
+    display: none;
+    
+}
+.burger_link_cont svg{
+    stroke: white;
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 1280px) {  /* 1024, 768, 640*/
+  .text_link span{
+    font-size:18px;
+    display: inline;
+  }
+}
+@media (max-width: 1024px){
+    .text_link{
+        display: none;
+    }
+    .burger_link_cont{
+        display: inline-block;
+    }
+}
 
 </style>
