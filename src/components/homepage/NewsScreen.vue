@@ -1,15 +1,16 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useNewsStore } from '../../stores/NewsStore';
 import NewsItem from '../homepage/NewsScreenItem.vue';
 import TextArrow from '../parts/TextArrow.vue';
 import SimpleArrow from '../parts/SimpleArrow.vue';
 
-const observer = new IntersectionObserver((entries, observer) => {
-  console.log(entries)
-});
+const observer = new IntersectionObserver((entries, observer) => { });
 
 const newsStore = useNewsStore();
+const offset = ref(0), itemWidth = ref(305), size = ref(4);
+const atEndOfList = computed(() => offset.value <= itemWidth.value*(size.value - newsStore.newsByType.length));
+const atHeadOfList = computed(() => offset.value >= 0);
 
 function chooseNewsType(nType){
     newsStore.setNewsType(nType);
@@ -22,9 +23,37 @@ function chooseNewsType(nType){
     offset.value = 0;
 }
 
-let offset = ref(0), itemWidth = ref(305), size = 4; 
-const atEndOfList = computed(() => offset.value <= itemWidth.value*(size - newsStore.newsByType.length));
-const atHeadOfList = computed(() => offset.value >= 0);
+const handleResize = () => {
+    offset.value = 0;
+    let w = window.innerWidth;
+    if (w >= 1280){
+        itemWidth.value = 305;
+        size.value = 4;
+    } else if (w >= 1024){
+        size.value = 4;
+        itemWidth.value = (w - 40 - (size.value-1)*20)/size.value;
+    } else if (w >= 768){
+        size.value = 3;
+        itemWidth.value = (w - 40 - (size.value-1)*20)/size.value;
+    } else if (w >= 640) {
+        size.value = 2;
+        itemWidth.value = (w - 40 - (size.value-1)*20)/size.value;
+    } else if (w >= 400){
+        size.value = 1;
+        itemWidth.value = (w - 40 - (size.value-1)*20)/size.value;
+    }
+}
+
+onMounted(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+})
+
+
 function moveCarousel(direction) {
     if (direction === 1 && !atEndOfList._value) offset.value -= itemWidth.value + 20;
     else if (direction === -1 && !atHeadOfList._value) offset.value += itemWidth.value + 20;
@@ -40,8 +69,8 @@ const endSlide = () => {
     contSlider.classList.remove('active');
     if (delta < 0) {
         newOffset = parseInt(newOffset/(itemWidth.value + 20) - 1) * (itemWidth.value + 20);
-        if (newOffset < itemWidth.value*(size - newsStore.newsByType.length))
-            newOffset = itemWidth.value*(size - newsStore.newsByType.length) - 40;
+        if (newOffset < itemWidth.value*(size.value - newsStore.newsByType.length))
+            newOffset = itemWidth.value*(size.value - newsStore.newsByType.length) - 40;
     } else {
         newOffset = parseInt(newOffset/(itemWidth.value + 20)) * (itemWidth.value + 20);
         if (newOffset > 0)
@@ -71,8 +100,8 @@ const moveSlide = (e) => {
     e.preventDefault();
     let x = e.pageX || e.touches[0].pageX;
     newOffset = x - startX + startPos;
-    if (newOffset < itemWidth.value*(size - newsStore.newsByType.length)) {
-        newOffset = itemWidth.value*(size - newsStore.newsByType.length) - 40;
+    if (newOffset < itemWidth.value*(size.value - newsStore.newsByType.length)) {
+        newOffset = itemWidth.value*(size.value - newsStore.newsByType.length) - 40;
         x = xLast;
     } else if (newOffset > 0) {
         newOffset = 0;

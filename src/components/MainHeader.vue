@@ -154,7 +154,7 @@ nav span:hover:before {
 
 }
 
-@media (max-width: 1280px) {  /* 1024, 768, 640*/
+@media (max-width: 1280px) {  
   .text_link span{
     font-size: 18px;
     display: inline;

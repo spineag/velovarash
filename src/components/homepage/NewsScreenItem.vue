@@ -1,9 +1,7 @@
 <script setup>
 import SimpleArrow from '../parts/SimpleArrow.vue';
 import { ref, computed } from "vue";
-// import { useNewsStore } from '../../stores/NewsStore';
 
-// const newsStore = useNewsStore();
 const isHover = false;
 const props = defineProps({
   newsItem: {
@@ -15,7 +13,8 @@ const props = defineProps({
 });
 
 const bg = ref('url("' + props.newsItem.preview + '")');
-const wdth = ref(props.itemWidth + 'px');
+// const wdth = ref(props.itemWidth + 'px');
+const wdth = computed(() => props.itemWidth + 'px');
 
 function adaptiveText(txt){
     if (txt.length < 120) return txt;

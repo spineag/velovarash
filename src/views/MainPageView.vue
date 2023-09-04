@@ -7,6 +7,8 @@ import RoutesScreen from '../components/homepage/RoutesScreen.vue'
 import AboutScreen from '../components/homepage/AboutScreen.vue'
 import HelpScreen from '../components/homepage/HelpScreen.vue'
 import MainFooter from '../components/MainFooter.vue'
+
+/* resizes: 1280, 1024, 768, 640*/
 </script>
 
 <template>
@@ -27,3 +29,5 @@ import MainFooter from '../components/MainFooter.vue'
     <MainFooter />
   </footer>
 </template>
+
+
