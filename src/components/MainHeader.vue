@@ -1,4 +1,15 @@
 <script setup>
+import { ref, computed, onMounted } from "vue";
+
+const menu = ref(null);
+const overlay = ref(null);
+
+function clickMenu(){
+    menu.value.classList.toggle('header-menu_active');
+    overlay.value.classList.toggle('header-menu_active');
+    document.body.style.overflow = menu.value.classList.contains('header-menu_active') ? 'hidden' : 'visible';
+}
+
 </script>
 
 <template>
@@ -16,13 +27,30 @@
             <RouterLink to="/routes" class="text_link"><span>Маршрути</span></RouterLink>
             <RouterLink to="/about" class="text_link"><span>Веловараш</span></RouterLink>
             <RouterLink to="/help" class="text_link"><span>Допомога</span></RouterLink>
-            <div class="burger_link_cont">
+            <div class="header_link_cont" @click="clickMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </div>
         </nav>
     </div>
+    <nav ref="menu" class="header-menu_nav">
+        <div class="header_link_cont" @click="clickMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <RouterLink to="/news" class="m_text_link"><span>Новини</span></RouterLink>
+        <br>
+        <RouterLink to="/projects" class="m_text_link"><span>Проекти</span></RouterLink>
+        <br>
+        <RouterLink to="/routes" class="m_text_link"><span>Маршрути</span></RouterLink>
+        <br>
+        <RouterLink to="/about" class="m_text_link"><span>Веловараш</span></RouterLink>
+        <br>
+        <RouterLink to="/help" class="m_text_link"><span>Допомога</span></RouterLink>
+    </nav>
+    <div ref="overlay" class="header-menu_overlay" @click="clickMenu()"></div>
 </template>
 
 <style scoped>
@@ -76,19 +104,59 @@ nav span:hover:before {
     transform-origin: right;
     transform: scaleX(1);
 } 
-.burger_link_cont{
+.header_link_cont{
     display: none;
-    
 }
-.burger_link_cont svg{
+.header_link_cont svg{
     stroke: white;
     width: 60px;
     height: 60px;
 }
+.header-menu_nav{
+  padding-top: 120px;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  background-color: #059669;
+  overflow-y: auto;
+  right: -100%;
+  transition: 0.8s;
+  width: 300px;
+  padding-left: 40px;
+
+}
+.header-menu_active{
+  right: 0;
+  transition: 0.4s;
+}
+.header-menu_overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+.header-menu_active.header-menu_overlay{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header-menu_nav .header_link_cont{
+    position: absolute;
+    top:20px;
+    right: 20px;
+}
+.m_text_link{
+
+}
 
 @media (max-width: 1280px) {  /* 1024, 768, 640*/
   .text_link span{
-    font-size:18px;
+    font-size: 18px;
     display: inline;
   }
 }
@@ -96,9 +164,17 @@ nav span:hover:before {
     .text_link{
         display: none;
     }
-    .burger_link_cont{
+    .header_link_cont{
         display: inline-block;
     }
 }
 
+@media(min-width: 1025px){
+    .header-menu_active{
+        display: none;
+    }
+    .m_text_link{
+        display: none;
+    }
+}
 </style>
