@@ -70,8 +70,8 @@ function onChooseItem(project){
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
 }
 .all_projects_item{
     width: 100px;
@@ -81,8 +81,27 @@ function onChooseItem(project){
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
+    background-color: transparent;
 }
 .velo_cont_inner{
     height: calc(650px + 248px);
+}
+@media(max-width:1280px){
+    .project_info{
+        right: 20px;
+    }
+}
+
+@media(max-width:800px){
+    .projects_items_container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .all_projects_item{
+        color: white;
+        fill: white;
+        background-color: #059669;
+        width: 100%;
+        height: 105px;
+    }
 }
 </style>

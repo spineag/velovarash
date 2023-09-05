@@ -69,4 +69,16 @@ const bg = ref('url("' + props.projItem.preview + '")');
     opacity: 1;
     font-weight: 700;
 }
+
+
+@media(max-width:800px){
+    .this_item .route_kind{
+        opacity: 1;
+        font-weight: 800;
+        font-size: 18px;
+    }
+    .this_item .img_div{
+        filter:grayscale(0);
+    }
+}
 </style>

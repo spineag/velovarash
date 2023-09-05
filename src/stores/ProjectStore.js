@@ -146,7 +146,7 @@ export const useProjectStore = defineStore('projectStore', () => {
       }
   ]);
 
-  const forScreen = computed(() => projects.value.slice(0,4) );
+  const forScreen = computed(() => projects.value.slice(0,5) );
 
   return { projects, forScreen }
 

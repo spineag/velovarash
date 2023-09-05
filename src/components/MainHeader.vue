@@ -150,9 +150,6 @@ nav span:hover:before {
     top:20px;
     right: 20px;
 }
-.m_text_link{
-
-}
 
 @media (max-width: 1280px) {  
   .text_link span{
