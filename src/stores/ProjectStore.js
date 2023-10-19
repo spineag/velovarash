@@ -5,7 +5,7 @@ export const useProjectStore = defineStore('projectStore', () => {
   const projects = ref([
     {
         id: 1,
-        name: 'Качайгорб',
+        name: 'Памптрек',
         kind: 'PT',
         length: 0.1,
         hard: 1,
@@ -20,7 +20,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         active: true
     },{
         id: 2,
-        name: '100 ВелоВатт',
+        name: '100 ВелоВатт +',
         kind: 'XCM',
         length: 100,
         hard: 1,
@@ -35,7 +35,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         active: true
       },{
         id:3,
-        name: 'Хомецька',
+        name: 'XCO Паркове',
         kind: 'XCO',
         length: 4.6,
         hard: 2,
@@ -50,7 +50,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         active: true
       },{
         id:4,
-        name: 'Поліська Січ',
+        name: 'Поліський блуд',
         kind: 'MDR', // multi-day race
         length: 300,
         hard: 3,
@@ -66,83 +66,83 @@ export const useProjectStore = defineStore('projectStore', () => {
         active: true
       },{
         id:5,
-        name: '100 миль',
-        kind: 'XCM', // 
-        length: 162,
-        hard: 4,
-        elev: 1571,
-        type: 'brevet',
-        time: 12*60*60,
+        name: 'Кубок Варашу',
+        kind: 'CUP', // 
+        length: 1,
+        hard: 1,
+        elev: 1,
+        type: 'cup',
+        time: 1,
         priority: 1002,
         location: 2, 
         preview: 'https://rivnepost.rv.ua/img/650/sprobuyte-proikhati-100-mil-menshe-nizh-za-10-hodi20190716_6954.jpg',
         photo: 'https://i.ytimg.com/vi/x-LtRbfrVOQ/maxresdefault.jpg',
         track: '',
         active: true
-      },{
-        id:6,
-        name: 'Медове коло',
-        kind: 'free', // 
-        length: 250,
-        hard: 2,
-        elev: 923,
-        type: 'tourism',
-        time: 16*60*60,
-        priority: 1003,
-        location: 2, 
-        preview: 'https://rest.guru.ua/img/place_photo/1167/2560.jpg',
-        photo: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/217680275_857219068540532_6010218509034933315_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=NDA9-3i-dS0AX-Rnlrf&_nc_ht=scontent-waw1-1.xx&oh=00_AfCgRxQIKXwjqhTu32BXjWdJXPrjTcJ9jyPt3HSBFczZGg&oe=64EA8724',
-        site: 'https://www.facebook.com/Medove.kolo2019/',
-        track: '',
-        active: true
-      },{
-        id:7,
-        name: 'TransUkraine',
-        kind: 'MDR', // 
-        length: 1500,
-        hard: 5,
-        elev: 5000,
-        type: 'tourism',
-        time: 7*24*60*60,
-        priority: 10001,
-        location: 3, 
-        preview: 'https://yt3.googleusercontent.com/ytc/AOPolaSTmiePYMRwCAXKFSkCrXpckw7CpPU3MMSPZY7JMg=s900-c-k-c0x00ffffff-no-rj',
-        photo: 'https://www.everyvelo.com/wp-content/uploads/2020/11/MG_9153.jpg',
-        site: 'https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q',
-        track: '',
-        active: true
-      },{
-        id:8,
-        name: 'Gravel 200',
-        kind: 'XCM', // 
-        length: 200,
-        hard: 4,
-        elev: 820,
-        type: 'sport',
-        time: 7*24*60*60,
-        priority: 10002,
-        location: 3, 
-        preview: 'https://cdn.mos.cms.futurecdn.net/MWhHZnfDF4TGjzixQxB8Sa-215-80.jpg',
-        photo: 'https://i.ytimg.com/vi/Vrylwyv3QA0/maxresdefault.jpg',
-        site: 'https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q',
-        track: '',
-        active: true
-      },{
-        id:9,
-        name: 'Randonneurs',
-        kind: 'MDR', // 
-        length: 1200,
-        hard: 5,
-        elev: '',
-        type: 'brevet',
-        time: '',
-        priority: 10003,
-        location: 3, 
-        preview: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307756594_468396671983409_781942370345668549_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FncFgLq2BWcAX9OmScP&_nc_ht=scontent-waw1-1.xx&oh=00_AfCFBl0hTqrUyLZ5rnikpfdTRhgJL0ixtl6IT0kfGvFGlg&oe=64EB9B6F',
-        photo: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/306731248_468396668650076_8679510591017502621_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=3ZCTZKL2FzkAX-XoDlm&_nc_ht=scontent-waw1-1.xx&oh=00_AfCb5w4G_9vz1IBw31GNoeEho__6Oad5GYWF7CjwilEbTQ&oe=64EBE9F1',
-        site: 'https://randonneurs-ua.org/',
-        track: '',
-        active: true
+      // },{
+      //   id:6,
+      //   name: 'Медове коло',
+      //   kind: 'free', // 
+      //   length: 250,
+      //   hard: 2,
+      //   elev: 923,
+      //   type: 'tourism',
+      //   time: 16*60*60,
+      //   priority: 1003,
+      //   location: 2, 
+      //   preview: 'https://rest.guru.ua/img/place_photo/1167/2560.jpg',
+      //   photo: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/217680275_857219068540532_6010218509034933315_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=NDA9-3i-dS0AX-Rnlrf&_nc_ht=scontent-waw1-1.xx&oh=00_AfCgRxQIKXwjqhTu32BXjWdJXPrjTcJ9jyPt3HSBFczZGg&oe=64EA8724',
+      //   site: 'https://www.facebook.com/Medove.kolo2019/',
+      //   track: '',
+      //   active: true
+      // },{
+      //   id:7,
+      //   name: 'TransUkraine',
+      //   kind: 'MDR', // 
+      //   length: 1500,
+      //   hard: 5,
+      //   elev: 5000,
+      //   type: 'tourism',
+      //   time: 7*24*60*60,
+      //   priority: 10001,
+      //   location: 3, 
+      //   preview: 'https://yt3.googleusercontent.com/ytc/AOPolaSTmiePYMRwCAXKFSkCrXpckw7CpPU3MMSPZY7JMg=s900-c-k-c0x00ffffff-no-rj',
+      //   photo: 'https://www.everyvelo.com/wp-content/uploads/2020/11/MG_9153.jpg',
+      //   site: 'https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q',
+      //   track: '',
+      //   active: true
+      // },{
+      //   id:8,
+      //   name: 'Gravel 200',
+      //   kind: 'XCM', // 
+      //   length: 200,
+      //   hard: 4,
+      //   elev: 820,
+      //   type: 'sport',
+      //   time: 7*24*60*60,
+      //   priority: 10002,
+      //   location: 3, 
+      //   preview: 'https://cdn.mos.cms.futurecdn.net/MWhHZnfDF4TGjzixQxB8Sa-215-80.jpg',
+      //   photo: 'https://i.ytimg.com/vi/Vrylwyv3QA0/maxresdefault.jpg',
+      //   site: 'https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q',
+      //   track: '',
+      //   active: true
+      // },{
+      //   id:9,
+      //   name: 'Randonneurs',
+      //   kind: 'MDR', // 
+      //   length: 1200,
+      //   hard: 5,
+      //   elev: '',
+      //   type: 'brevet',
+      //   time: '',
+      //   priority: 10003,
+      //   location: 3, 
+      //   preview: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307756594_468396671983409_781942370345668549_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FncFgLq2BWcAX9OmScP&_nc_ht=scontent-waw1-1.xx&oh=00_AfCFBl0hTqrUyLZ5rnikpfdTRhgJL0ixtl6IT0kfGvFGlg&oe=64EB9B6F',
+      //   photo: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/306731248_468396668650076_8679510591017502621_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=3ZCTZKL2FzkAX-XoDlm&_nc_ht=scontent-waw1-1.xx&oh=00_AfCb5w4G_9vz1IBw31GNoeEho__6Oad5GYWF7CjwilEbTQ&oe=64EBE9F1',
+      //   site: 'https://randonneurs-ua.org/',
+      //   track: '',
+      //   active: true
       }
   ]);
 
