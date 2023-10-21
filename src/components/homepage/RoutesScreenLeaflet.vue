@@ -90,7 +90,8 @@
       // },
     },
     async created() {
-      const response = await fetch("https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/geojson/50velowatt.geojson");
+      // const response = await fetch("https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/geojson/50velowatt.geojson");
+      const response = await fetch("../../../src/assets/geojson/50velowatt.geojson");
       this.geojson = await response.json();
     },
   };

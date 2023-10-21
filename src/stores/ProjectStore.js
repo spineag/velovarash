@@ -14,8 +14,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 752,
         priority: 1,
         location: 1, 
-        preview: 'https://christchurch-adventure-park.imgix.net/assets/General/2afe15e2f7/Kids_Pump_Track_Christchurch_Adventure_Park_-v2__ResizedImageWzYwMCw0MDBd.jpg?auto=format',
-        photo: 'https://www.forestryengland.uk/sites/default/files/styles/list_image_large_2x/public/media/AL_Forestry_England_2362321.JPG?itok=Z3mpzruI',
+        preview: 'src/assets/img/pump_small.jpg',
+        photo: 'src/assets/img/pump-min.jpeg',
         track: '',
         active: true
     },{
@@ -23,14 +23,14 @@ export const useProjectStore = defineStore('projectStore', () => {
         name: '100 ВелоВатт +',
         kind: 'XCM',
         length: 100,
-        hard: 1,
+        hard: 4,
         elev: 174,
         type: 'sport',
         time: 4*60*60,
         priority: 2,
         location: 1, 
-        preview: 'https://www.visti.rovno.ua/img/650/100-velowatt-asfalt-stezhki-brukivka-pisok-ta-slav20210614_8394.png',
-        photo: 'https://cdn4.suspilne.media/images/resize/1040x1.78/0f28bdd182a52396.jpg',
+        preview: 'src/assets/img/100vw_small-min.png',
+        photo: 'src/assets/img/100vwplus-min.jpeg',
         track: '',
         active: true
       },{
@@ -44,8 +44,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 21*60 ,
         priority: 3,
         location: 1, 
-        preview: 'https://www.rivnenews.com.ua/wp-content/uploads/2019/05/536566565.jpg',
-        photo: 'https://www.revelstokemountainresort.com/site/assets/files/3866/hywel-williams--summer-2021-bob-danielmoore-martinlentz-janelleyipper-large_1.1700x815.webp',
+        preview: 'src/assets/img/parkove_small-min.jpeg',
+        photo: 'src/assets/img/parkove-min.jpeg',
         track: '',
         active: true
       },{
@@ -59,14 +59,14 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 30*60*60,
         priority: 1001,
         location: 2, 
-        preview: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjGH0ILiFZ8p2uhefNBgPSfxMD-myc9EwnA&usqp=CAU',
-        photo: 'https://i.ytimg.com/vi/wm22sWAvj6g/maxresdefault.jpg',
-        site:'https://way.rv.ua/',
+        preview: 'src/assets/img/polis_small-min.jpeg',
+        photo: 'src/assets/img/polis-min.jpeg',
+        site:'',
         track: '',
         active: true
       },{
         id:5,
-        name: 'Кубок Варашу',
+        name: 'Кубок Вараша',
         kind: 'CUP', // 
         length: 1,
         hard: 1,
@@ -75,8 +75,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 1,
         priority: 1002,
         location: 2, 
-        preview: 'https://rivnepost.rv.ua/img/650/sprobuyte-proikhati-100-mil-menshe-nizh-za-10-hodi20190716_6954.jpg',
-        photo: 'https://i.ytimg.com/vi/x-LtRbfrVOQ/maxresdefault.jpg',
+        preview: 'src/assets/img/cup_small.jpg',
+        photo: 'src/assets/img/olimp.jpeg',
         track: '',
         active: true
       // },{
