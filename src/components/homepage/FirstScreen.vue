@@ -16,7 +16,7 @@
 <style scoped>
     .media_div{
         height:calc(100vh - 80px);
-        background-image: url("../../assets/img/photo_bikers.jpg");
+        background-image: url("../../assets/img/photo_main.jpeg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

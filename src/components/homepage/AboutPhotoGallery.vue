@@ -11,7 +11,7 @@ const arrayUrls = ref([
      url2:'https://www.radurlaub.com/fileadmin/_processed_/0/0/csm_Kinder_Donauradweg_WEB__c_NiederoesterreichWerbung_StefanFuertbauer_54df4248fa.jpg'},
     {url1:'https://www.nps.gov/articles/images/Bicyclists-in-Shenandoah-National-Park-for-web.jpg', 
      url2:'https://cdn.biketours.com/assets/files/1439/difficulty-level_bikers.800x0.jpg.webp'},
-    {url1:'https://www.visitfiemme.it/var/outdooractive/59648162.jpg', 
+    {url1:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGiwo-PizyzRqgRqkGIU85PUiQNjf75-KJWkSDBAZHUNov8fiBsrMISm9IdAvDlyssy-4&usqp=CAU', 
      url2:'https://francemotorhomehire.com/wp-content/uploads/2017/12/Cyclists-and-motorhomes-are-both-really-well-catered-for-in-The-Loire-Valley-with-cycle-routes-and-campsites-galore-.jpg'},
     {url1:'https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_mobile_1x/private/image/Tegeler_Forst_083_c_visitBerlin_Chris_Martin_web.jpg?itok=Cgs2XvWH', 
      url2:'https://im.indiatimes.in/content/2023/Jul/arshel-akhter_64ba2b87e1a4d.jpg?w=820&h=540&cc=1'},
