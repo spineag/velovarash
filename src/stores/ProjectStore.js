@@ -50,7 +50,7 @@ export const useProjectStore = defineStore('projectStore', () => {
         active: true
       },{
         id:4,
-        name: 'Поліський блуд',
+        name: 'Волиньський блуд',
         kind: 'MDR', // multi-day race
         length: 500,
         hard: 4,
