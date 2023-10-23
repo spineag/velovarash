@@ -69,6 +69,19 @@ export const useNewsStore = defineStore('newsStore', () => {
     ]);
 
   let nType = ref('all');
+  
+  // const _dateConvert = (st)=>{
+  //   let ar = st.split('.');
+  //   return ar[0]+'/'+ar[1]+'/'+ar[2];
+  // };
+
+  // const news = computed(()=>
+  //   newsData.value.sort((a,b)=>{
+  //     let dateA = new Date(_dateConvert(a.date));
+  //     let dateB = new Date(_dateConvert(b.date));
+  //     return dateA-dateB;
+  //   })
+  // );
 
   const newsByType = computed(()=>
     news.value.filter((el) => nType.value == 'all' || el.type == nType.value)
