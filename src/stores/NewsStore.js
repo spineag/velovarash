@@ -3,22 +3,22 @@ import { defineStore } from 'pinia';
 
 export const useNewsStore = defineStore('newsStore', () => {
   const news = ref([
-    {id:1, title: 'Поліська Діч 2024', date:'20.01.2024', type:'news',
-     preview:'https://stowetrails.org/wp-content/uploads/2023/05/IMG_5860-1-800x600.jpg',
-     text:`Cтежами наших предків! Карколомно, пізнавально, поважально! Афтепатнє рекавері та ТО - обов'язкові!`},
-    {id:2, title: '100ВелоВатт 18+ 2024', date:'11.01.2024', type:'news',
-     preview:'https://www.whaka100.co.nz/uploads/1/1/0/1/110154713/published/cosmo-bloor.jpeg?1593552746', 
-     text:`Абсолютно новий формат, філософія та маршрут!<br>
-     Ліс + болото + пісок - асфальт = LOVE<br>`},
-    {id:3, title: 'Памптрек у Парку. Фінал.', date:'01.03.2024', type:'news',
+    {id:1, title: 'Памптрек у Парку. Фінал.', date:'01.03.2024', type:'news',
      preview:'https://www.villedemont-tremblant.qc.ca/public_upload/images/loisirs/parcs/thumbnails/parc_recreatif_de_velos1-600x355-000000.JPG',
      text:`03.03 підсипка верхнього шару суглинку та остаточне формування геометрії`},
-    {id:4, title: 'Львівська Сотка 2024', date:'23.03.2024', type:'news',
-     preview:'https://static.ukrinform.com/photos/2022_05/thumb_files/630_360_1651372637-440.jpeg',
-     text:`Тільки у Львові - Пасха, день міста та велосотка в один день!) Поспішайте, адже вже в лютому всі місця ночівлі на травень будуть розібрані!)`},
-    {id:5, title: 'Волиньський блуд', date:'22.01.2024', type:'news',
+    {id:2, title: 'Поліська Діч 2024', date:'20.01.2024', type:'news',
+     preview:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTscOhpv6ov58qN5rcK5E5UpDVr7d40NzHh-Q&usqp=CAU',
+     text:`Cтежами наших предків! Карколомно, пізнавально, поважально! Афтепатнє рекавері та ТО - обов'язкові!`},
+    {id:3, title: '100ВелоВатт 18+ 2024', date:'11.01.2024', type:'news',
+     preview:'https://www.whaka100.co.nz/uploads/1/1/0/1/110154713/published/cosmo-bloor.jpeg?1593552746', 
+     text:`Абсолютно новий формат, філософія та маршрут!
+     Ліс + болото + пісок - асфальт = *LOVE*`},
+    {id:4, title: 'Волиньський блуд', date:'22.01.2024', type:'news',
      preview:'https://www.velociped.de/fileadmin/_processed_/d/1/csm_Mueritz_Nationalpark_227e5068a1.jpg',
      text:`Серія туристичних маршрутів на декілька днів, утворюючих своєріднне коло, яке об'єднує найкращі природні атракції історичної Волині. Плануються облаштовані місця ночівлі, харчування, допомоги і т.п.`},
+    {id:5, title: 'Львівська Сотка 2024', date:'23.03.2024', type:'news',
+     preview:'https://static.ukrinform.com/photos/2022_05/thumb_files/630_360_1651372637-440.jpeg',
+     text:`Тільки у Львові - Пасха, день міста та велосотка в один день!) Поспішайте, адже вже в лютому всі місця ночівлі на травень будуть розібрані!)`},
     
 
     {id:51, title: 'Будова велосипеду', date:'25.01.2023', type:'blog',
@@ -62,7 +62,7 @@ export const useNewsStore = defineStore('newsStore', () => {
  
     {id:151, title: 'Велоекоквест "Історія Волі"', date:'23.04.2024', type:'action',
      preview:'https://i0.wp.com/fissioncycles.com/wp-content/uploads/2022/12/FM-750-750x-Wood-Trail-1920px.jpg?fit=800%2C534&ssl=1',
-     text:`Цікаві питання, різноманітні маршрути, болота й піски, лісові селфачі! Ну шо ше тра для щастя, га?)<br>п.с. тіко не кажіть шо "піво"...`},
+     text:`Цікаві питання, різноманітні маршрути, болота й піски, лісові селфачі! Ну шо ше тра для щастя, га?) п.с. тіко не кажіть шо "піво"...`},
     {id:152, title: 'Велокубок Вараша 2024', date:'01.03.2024', type:'action',
      preview:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUXMDLvFE-EG0IMFlaUdn_HWk-eh5O8ekYQ&usqp=CAU',
      text:`Серія офлайн та онлайн заїздів з підсумомуванням результатів та виявленню найнаполегливіших велосипедистів міста. Шанси на табуретку мають всі!`},
