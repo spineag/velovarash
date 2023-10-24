@@ -19,8 +19,8 @@ export const useNewsStore = defineStore('newsStore', () => {
      preview:'src/assets/img/news/news_volyn_blud-min.jpeg',
      text:`Серія туристичних маршрутів на декілька днів, що об'єднують найкращі природні атракції історичної Волині. Плануються облаштовані місця ночівлі, харчування, допомоги і т.п.`},
     {id:5, title: 'Львівська Сотка 2024', date:'23.03.2024', type:'news',
-     preview:'hsrc/assets/img/news/news_lviv100-min.jpeg',
-     text:`Пасха, день міста та велосотка - це завжди цікаво! Поспішайте, адже вже в лютому всі місця ночівлі на травень будуть розібрані!`},
+     preview:'src/assets/img/news/news_lviv100-min.jpeg',
+     text:`Реєстрація на легендарну велосотку відкрита!`},
     
 
     {id:51, title: 'Будова велосипеду', date:'25.01.2023', type:'blog',

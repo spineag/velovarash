@@ -39,11 +39,12 @@ const bg = ref('url("' + props.projItem.preview + '")');
     background-color: white;
     height:25px;
     width: 100%;
-    text-align: center;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: 1;
 }
 .route_kind{
     position: absolute;
