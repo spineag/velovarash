@@ -184,7 +184,8 @@ onMounted(() => {
     width: 100%;
     height: 150%;
     opacity: 0.1;
-    background-image: url('../../assets/svg/lines-dark.svg');
+    /* background-image: url('../../assets/svg/lines-dark.svg'); */
+    background-image: url('https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/svg/lines-dark.svg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;

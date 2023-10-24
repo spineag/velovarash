@@ -5,7 +5,8 @@
     <div class="w-full media_div bg-emerald-600 ">
         <div class="velo_container h-full">
             <div class="bottom_line">
-                <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/>
+                <!-- <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/> -->
+                <img src = "https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/svg/logo_as_bg.svg" alt=""/>
                 <!-- <span>м. Вараш</span> -->
             </div>
 
@@ -16,7 +17,8 @@
 <style scoped>
     .media_div{
         height:calc(100vh - 80px);
-        background-image: url("../../assets/img/photo_main.jpeg");
+        /* background-image: url("../../assets/img/photo_main.jpeg"); */
+        background-image: url("https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/img/photo_main.jpeg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

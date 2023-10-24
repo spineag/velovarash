@@ -2,6 +2,8 @@ import { ref, computed } from "vue";
 import { defineStore } from 'pinia';
 
 export const useProjectStore = defineStore('projectStore', () => {
+  const url = 'https://raw.githubusercontent.com/spineag/velovarash/master/';
+
   const projects = ref([
     {
         id: 1,
@@ -14,8 +16,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 35,
         priority: 1,
         location: 1, 
-        preview: 'src/assets/img/pump_small.jpg',
-        photo: 'src/assets/img/pump-min.jpeg',
+        preview: url+'src/assets/img/pump_small.jpg',
+        photo: url+'src/assets/img/pump-min.jpeg',
         track: '',
         active: true
     },{
@@ -29,8 +31,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 4*60*60,
         priority: 2,
         location: 1, 
-        preview: 'src/assets/img/100vw_small-min.png',
-        photo: 'src/assets/img/100vwplus-min.jpeg',
+        preview: url+'src/assets/img/100vw_small-min.png',
+        photo: url+'src/assets/img/100vwplus-min.jpeg',
         track: '',
         active: true
       },{
@@ -44,8 +46,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 12*60 ,
         priority: 3,
         location: 1, 
-        preview: 'src/assets/img/parkove_small-min.jpeg',
-        photo: 'src/assets/img/parkove-min.jpeg',
+        preview: url+'src/assets/img/parkove_small-min.jpeg',
+        photo: url+'src/assets/img/parkove-min.jpeg',
         track: '',
         active: true
       },{
@@ -59,8 +61,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 30*60*60,
         priority: 1001,
         location: 2, 
-        preview: 'src/assets/img/polis_small-min.jpeg',
-        photo: 'src/assets/img/polis-min.jpeg',
+        preview: url+'src/assets/img/polis_small-min.jpeg',
+        photo: url+'src/assets/img/polis-min.jpeg',
         site:'',
         track: '',
         active: true
@@ -75,8 +77,8 @@ export const useProjectStore = defineStore('projectStore', () => {
         time: 1,
         priority: 1002,
         location: 2, 
-        preview: 'src/assets/img/cup_small.jpg',
-        photo: 'src/assets/img/olimp.jpeg',
+        preview: url+'src/assets/img/cup_small.jpg',
+        photo: url+'src/assets/img/olimp.jpeg',
         track: '',
         active: true
       // },{
