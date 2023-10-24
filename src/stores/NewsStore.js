@@ -11,14 +11,14 @@ export const useNewsStore = defineStore('newsStore', () => {
      text:`Cтежами предків!
 Карколомно, пізнавально, поважально!
 Афтепатнє рекавері та ТО - обов'язкові!`},
-    {id:3, title: '100ВелоВатт 18+ 2024', date:'11.01.2024', type:'news',
+    {id:3, title: '100ВелоВатт 18+ 2024', date:'11.02.2024', type:'news',
      preview:'src/assets/img/news/news_100vw-min.jpeg', 
      text:`Новий формат, філософія та маршрут!
 Ліс + болото + пісок - асфальт = *LOVE*`},
     {id:4, title: 'Волинський блуд', date:'22.01.2024', type:'news',
      preview:'src/assets/img/news/news_volyn_blud-min.jpeg',
      text:`Серія туристичних маршрутів на декілька днів, що об'єднують найкращі природні атракції історичної Волині. Плануються облаштовані місця ночівлі, харчування, допомоги і т.п.`},
-    {id:5, title: 'Львівська Сотка 2024', date:'23.03.2024', type:'news',
+    {id:5, title: 'Львівська Сотка 2024', date:'23.02.2024', type:'news',
      preview:'src/assets/img/news/news_lviv100-min.jpeg',
      text:`Реєстрація на легендарну велосотку відкрита!`},
     
@@ -58,32 +58,27 @@ export const useNewsStore = defineStore('newsStore', () => {
      text:`Щорічний, весняний, розкаточний машрут з Вараша до Базальтового на кр'єр. Маршрут на 150-160км.`},
        
  
-    {id:151, title: 'Велоекоквест "Історія Волі"', date:'23.04.2024', type:'action',
+    {id:151, title: 'Велоекоквест "Історія Волі"', date:'25.03.2024', type:'action',
      preview:'src/assets/img/news/action_quest-min.jpg',
      text:`Цікаві питання, різноманітні маршрути, болота й піски, лісові селфачі! Ну шо ше тра для щастя, га?) п.с. тіко не кажіть шо "піво"...`},
-    {id:152, title: 'Велокубок Вараша 2024', date:'01.03.2024', type:'action',
+    {id:152, title: 'Велокубок Вараша 2024', date:'01.01.2024', type:'action',
      preview:'src/assets/img/news/action_cup-min.jpg',
      text:`Серія офлайн та онлайн заїздів з підсумомуванням результатів та виявлення найнаполегливіших велосипедистів міста. Шанси на табуретку мають всі!`},
-    ]);
+  ]);
+
+  const _dateConvert = (st)=>{
+    let ar = st.split('.');
+    return ar[1]+'/'+ar[0]+'/'+ar[2];
+  };  
+  news.value.sort((a,b)=>{
+    let dateA = new Date(_dateConvert(a.date));
+    let dateB = new Date(_dateConvert(b.date));
+    return dateB-dateA;
+  });
 
   let nType = ref('all');
-  
-  // const _dateConvert = (st)=>{
-  //   let ar = st.split('.');
-  //   return ar[0]+'/'+ar[1]+'/'+ar[2];
-  // };
 
-  // const news = computed(()=>
-  //   newsData.value.sort((a,b)=>{
-  //     let dateA = new Date(_dateConvert(a.date));
-  //     let dateB = new Date(_dateConvert(b.date));
-  //     return dateA-dateB;
-  //   })
-  // );
-
-  const newsByType = computed(()=>
-    news.value.filter((el) => nType.value == 'all' || el.type == nType.value)
-  ); 
+  const newsByType = computed(()=>  news.value.filter((el) => nType.value == 'all' || el.type == nType.value)); 
 
   const setNewsType = (type) => nType.value = type;
 
