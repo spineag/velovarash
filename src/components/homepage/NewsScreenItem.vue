@@ -99,6 +99,7 @@ function adaptiveText(txt){
         opacity: 0;
 	    transition: all 0.3s 0.2s ease;
         margin-top:10px;
+        white-space: pre-wrap;
     }
     .news_item_link{
         position:absolute;
