@@ -1,10 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+// import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <!-- <header>
+   {/* <header>
 
     <div class="wrapper"> 
        <HelloWorld msg="You did it!" />
@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header> -->
+  </header>  */}
 
   <RouterView />
 </template>
