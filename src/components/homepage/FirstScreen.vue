@@ -4,6 +4,10 @@
 <template>
     <div class="w-full media_div bg-emerald-600 ">
         <div class="velo_container h-full">
+            <div class="temp_work">
+                <div>Сайт в стані розробки</div>
+                <div> та наповнені інформацією</div>
+            </div>
             <div class="bottom_line">
                 <!-- <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/> -->
                 <img src = "https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/svg/logo_as_bg.svg" alt=""/>
@@ -22,6 +26,24 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+    }
+    .temp_work{
+        position: absolute;
+        top: 240px;
+        width: 100%;
+        text-align: center;
+        filter: drop-shadow(0 4px 4px black);
+    }
+    .temp_work>div{
+        width:fit-content;
+        margin: 0px auto;
+        padding:30px 40px;
+        font-size: 42px;
+        font-weight: 900;
+        color: black;
+        background: repeating-linear-gradient(-77deg, rgb(255, 175, 175), rgb(255, 175, 175) 30px, white 30px, white 90px);
+        clip-path: polygon(0% 100%, 4% 20%, 100% 0%, 96% 80%);
+        line-height:1;
     }
     .bottom_line{
         bottom: 80px;

@@ -4,7 +4,7 @@
 </script>
 
 <template>
-   {/* <header>
+    <!-- <header>
 
     <div class="wrapper"> 
        <HelloWorld msg="You did it!" />
@@ -14,7 +14,7 @@
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>  */}
+  </header>  */} -->
 
   <RouterView />
 </template>
