@@ -41,7 +41,7 @@
         font-size: 42px;
         font-weight: 900;
         color: black;
-        background: repeating-linear-gradient(-77deg, rgb(255, 175, 175), rgb(255, 175, 175) 30px, white 30px, white 90px);
+        background: repeating-linear-gradient(-77deg, rgb(255, 170, 170), rgb(255, 170, 170) 30px, white 30px, white 90px);
         clip-path: polygon(0% 100%, 4% 20%, 100% 0%, 96% 80%);
         line-height:1;
     }
