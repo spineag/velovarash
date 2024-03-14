@@ -6,7 +6,7 @@
         <div class="velo_container h-full">
             <div class="temp_work">
                 <div>Сайт в стані розробки</div>
-                <div>та наповнені інформацією</div>
+                <div> та наповнені інформацією</div>
             </div>
             <div class="bottom_line">
                 <!-- <img src = "../../../src/assets/svg/logo_as_bg.svg" alt=""/> -->
