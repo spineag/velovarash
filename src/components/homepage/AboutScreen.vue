@@ -5,7 +5,6 @@ import AboutPhotoGallery from '../homepage/AboutPhotoGallery.vue';
 
 <template>
     <div class="w-full about_section">
-        <!-- <div class="about_image"></div>  -->
         <AboutPhotoGallery />
         <div class="about_cont bg-emerald-600">
             <div class="about_texts">
@@ -39,14 +38,6 @@ import AboutPhotoGallery from '../homepage/AboutPhotoGallery.vue';
     height: 600px;
     position: relative;
 }
-.about_image{
-    width:50%;
-    height:100%;
-    background-image: url("../../assets/img/photo_bikers.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .about_cont{
     width:50%;
     height:100%;
@@ -69,6 +60,14 @@ import AboutPhotoGallery from '../homepage/AboutPhotoGallery.vue';
     position: absolute;
     bottom: 80px;
     width: 100%;
+}
+@media (max-width:768px){
+    .cont{
+        display: none;
+    }
+    .about_cont{
+        width: 100%;
+    }
 }
 
 </style>

@@ -140,6 +140,12 @@ import RoutesScreenItem from './RoutesScreenItem.vue';
     overflow-y: auto;
     pointer-events: all;
 }
+
+@media (max-width:1024px){
+    .filters_cont{
+        display: none;
+    }
+}
 </style>
 
 
