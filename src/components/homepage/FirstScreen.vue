@@ -40,8 +40,8 @@
         padding:30px 40px;
         font-size: 42px;
         font-weight: 900;
-        color: black;
-        background: repeating-linear-gradient(-77deg, rgb(255, 170, 170), rgb(255, 170, 170) 30px, white 30px, white 90px);
+        color: #d63227;
+        background: repeating-linear-gradient(-77deg, rgb(255, 210, 10), rgb(255, 210, 10) 80px, black 80px, black 160px);
         clip-path: polygon(0% 100%, 4% 20%, 100% 0%, 96% 80%);
         line-height:1;
     }
