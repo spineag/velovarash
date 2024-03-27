@@ -1,28 +1,37 @@
 <script setup>
+import { ref, computed } from "vue";
+
+const isHover = false;
+const props = defineProps({
+  helpItem: {
+    type: Object,
+    required: true,
+    default: () => {},
+  },
+  itemWidth: Number,
+});
+
+const bg = ref('url("' + props.bg + '")');
+const ava = ref('url("' + props.ava + '")');
+const wdth = computed(() => props.itemWidth + 'px');
 
 </script>
 
 <template>
     <div class="help_item velo_shadow">
         <div class="help_cont">
-            <div class="help_title">Обслуговування</div>
             <ul>
-                <li>Життєві бесіди</li>
-                <li>Чистка та смазка цепу солідолом</li>
-                <li>Розсверлення ексцентрика під вісь</li>
-                <li>Флет руль з барана</li>
-                <li>Освята вузлів та передач</li>
-                <li>Захист карбону від зглазу</li>
+                <li v-for="n of helpItem.list">{{ n }}</li>
             </ul>
             <div class="help_avatar">
-                <img src="../../assets/img/ava_small.jpg" alt=""/>
+                <img alt=""/>
             </div>
         </div>
         <div class="help_overlay">
-            <div class="help_overlay_img" style="background-image: url('https://c8.alamy.com/zooms/9/c89cf5f0abcd4d93aec8f456ff1d895d/pyen54.jpg');"> </div>
+            <div class="help_overlay_img"> </div>
             <div class="help_overlay_line">
-                <span>099 999 99 99</span>
-                <span>Анатолійович</span>
+                <span>{{ helpItem.phone }}</span>
+                <span> {{ helpItem.name }}</span>
             </div>
         </div>
        
@@ -32,7 +41,8 @@
 
 <style scoped>
 .help_item{
-    width:100%;
+    min-width:v-bind(wdth);
+    width:v-bind(wdth);
     height:220px;
     cursor: pointer;
     background-color: white;
@@ -64,6 +74,7 @@
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
+    background-image: v-bind(ava);
 }
 .help_overlay{
     position: absolute;
@@ -82,6 +93,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: v-bind(bg);
 }
 .help_overlay_line{
     height:30px;
