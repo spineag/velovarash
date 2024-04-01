@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 
-const isHover = false;
+// const isHover = false;
 const props = defineProps({
   helpItem: {
     type: Object,
@@ -11,17 +11,17 @@ const props = defineProps({
   itemWidth: Number,
 });
 
-const bg = ref('url("' + props.bg + '")');
-const ava = ref('url("' + props.ava + '")');
+const bg = ref('url("' + props.helpItem.bg + '")');
+const ava = ref('url("' + props.helpItem.ava + '")');
 const wdth = computed(() => props.itemWidth + 'px');
 
 </script>
 
 <template>
-    <div class="help_item velo_shadow">
+    <div class="help_item velo_shadow"> <!--/ @mouseenter="isHover = true" @mouseleave="isHover = false"> -->
         <div class="help_cont">
             <ul>
-                <li v-for="n of helpItem.list">{{ n }}</li>
+                <li v-for="n of helpItem.list" :key="n">{{ n }}</li>
             </ul>
             <div class="help_avatar">
                 <img alt=""/>
@@ -75,6 +75,9 @@ const wdth = computed(() => props.itemWidth + 'px');
     object-fit: cover;
     border-radius: 50%;
     background-image: v-bind(ava);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .help_overlay{
     position: absolute;

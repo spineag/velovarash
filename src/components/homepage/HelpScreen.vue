@@ -10,7 +10,7 @@ const observer = new IntersectionObserver((entries, observer) => { });
 
 const helpsStore = useHelpsStore();
 const offset = ref(0), itemWidth = ref(305), size = ref(4);
-const atEndOfList = computed(() => offset.value <= itemWidth.value*(size.value - helpsStore.length));
+const atEndOfList = computed(() => offset.value <= itemWidth.value*(size.value - helpsStore.helps.length));
 const atHeadOfList = computed(() => offset.value >= 0);
 
 const handleResize = () => {
@@ -58,8 +58,8 @@ const endSlide = () => {
     contSlider.classList.remove('active');
     if (delta < 0) {
         newOffset = parseInt(newOffset/(itemWidth.value + 20) - 1) * (itemWidth.value + 20);
-        if (newOffset < itemWidth.value*(size.value - helpsStore.newsByType.length))
-            newOffset = itemWidth.value*(size.value - helpsStore.newsByType.length) - 40;
+        if (newOffset < itemWidth.value*(size.value - helpsStore.helps.length))
+            newOffset = itemWidth.value*(size.value - helpsStore.helps.length) - 40;
     } else {
         newOffset = parseInt(newOffset/(itemWidth.value + 20)) * (itemWidth.value + 20);
         if (newOffset > 0)
@@ -89,8 +89,8 @@ const moveSlide = (e) => {
     e.preventDefault();
     let x = e.pageX || e.touches[0].pageX;
     newOffset = x - startX + startPos;
-    if (newOffset < itemWidth.value*(size.value - helpsStore.newsByType.length)) {
-        newOffset = itemWidth.value*(size.value - helpsStore.newsByType.length) - 40;
+    if (newOffset < itemWidth.value*(size.value - helpsStore.helps.length)) {
+        newOffset = itemWidth.value*(size.value - helpsStore.helps.length) - 40;
         x = xLast;
     } else if (newOffset > 0) {
         newOffset = 0;
@@ -122,7 +122,7 @@ onMounted(() => {
             
             <div class="help_items_container">
                 <div class="help_items_carousel flex" :style="{ transform: 'translateX('+ offset +'px)'}">
-                    <HelpItem v-for="n of helpsStore" :key="hlp.id" :helpItem="hlp" :itemWidth="itemWidth" class="help_item"/>
+                    <HelpItem v-for="hlp of helpsStore.helps" :key="hlp.id" :helpItem="hlp" :itemWidth="itemWidth" class="help_item"/>
                 </div>
             </div>
 
