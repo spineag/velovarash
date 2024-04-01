@@ -12,11 +12,11 @@ import MainFooter from '../components/MainFooter.vue'
 </script>
 
 <template>
-  <header class="absolute top-0 left-0 w-full z-50 sticky">
+  <header class="fixed top-0 left-0 w-full z-50">
     <MainHeader />
   </header>
 
-  <main style="top:-100px">
+  <main>
     <FirstScreen />
     <NewsScreen />
     <ProjectsScreen />
