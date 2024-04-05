@@ -6,7 +6,7 @@ import { ref, computed, onMounted } from "vue";
 
 let url = 'https://velovarash.pp.ua/src/assets/img/small_photos/';
 let arrayAllUrls = [];
-for (let i=1; i<=126;i++){
+for (let i=1; i<=125;i++){
 	arrayAllUrls.push(url + i + '.jpg');
 }
 let arrayUrls = ref([]);
