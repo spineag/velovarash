@@ -1,4 +1,9 @@
 <script setup>
+import { ref, computed } from "vue";
+
+let bgNum = Math. floor(Math. random()*6) + 1;
+const bg = ref('url("https://velovarash.pp.ua/src/assets/img/top_bg/bg'+bgNum+'-min.jpeg")');
+
 </script>
 
 <template>
@@ -22,14 +27,14 @@
     .media_div{
         height:calc(100vh - 80px);
         /* background-image: url("../../assets/img/photo_main.jpeg"); */
-        background-image: url("https://raw.githubusercontent.com/spineag/velovarash/master/src/assets/img/photo_main.jpeg");
+        background-image: v-bind(bg);;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
     .temp_work{
         position: absolute;
-        top: 240px;
+        bottom: 250px;
         width: 100%;
         text-align: center;
         filter: drop-shadow(0 4px 4px black);
