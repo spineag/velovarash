@@ -26,7 +26,7 @@ function clickMenu(){
             <RouterLink to="/projects" class="text_link"><span>Проекти</span></RouterLink>
             <RouterLink to="/routes" class="text_link"><span>Маршрути</span></RouterLink>
             <RouterLink to="/about" class="text_link"><span>Веловараш</span></RouterLink>
-            <RouterLink to="/help" class="text_link"><span>Допомога</span></RouterLink>
+            <RouterLink to="/help" class="text_link"><span>Майстри</span></RouterLink>
             <div class="header_link_cont" @click="clickMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="inherit" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
