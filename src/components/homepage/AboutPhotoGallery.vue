@@ -13,8 +13,8 @@ let arrayUrls = ref([]);
 const shuffle = (arr) => { 
     return arr.sort(() => Math.random() - 0.5); 
 };
-let ar = shuffle(arrayAllUrls).splice(0,40);
-for (let k=0;k<20;k++){
+let ar = shuffle(arrayAllUrls).splice(0,50);
+for (let k=0;k<50;k++){
 	arrayUrls.value.push({url1:ar[2*k], url2:ar[2*k+1]});
 }
 
@@ -72,8 +72,9 @@ onMounted(()=>{
 .cont{
     width:50%;
     height:100%;
+	overflow: hidden;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 	gap: 0;
 	justify-content: right;
@@ -203,5 +204,38 @@ onMounted(()=>{
 		 transform: rotate3d(0, 1, 0, 104deg);
 	}
 }
+
+@media (max-width: 1480px){
+	.cont{ 
+		grid-template-columns: repeat(5, 1fr);
+    	grid-template-rows: repeat(5, 1fr);
+	}
+	.layer_item_cont { /* full height: 600px. 250x150 */
+		width: 200px;
+		height: 120px;
+		cursor: cell;
+	}
+}
+
+@media (max-width: 1240px){
+	.cont{ 
+		grid-template-columns: repeat(4, 1fr);
+    	grid-template-rows: repeat(6, 1fr);
+	}
+	.layer_item_cont { 
+		width: 164px;
+		height: 100px;
+		cursor: cell;
+	}
+}
+
+@media (max-width:1024px){
+	.cont{
+		display: none;
+	}
+}
+
+
+
 
 </style>
